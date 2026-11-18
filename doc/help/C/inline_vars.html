@@ -1,0 +1,72 @@
+<HTML>
+  <HEAD>
+    <TITLE>Gnome ReadNews Inline Variables</TITLE>
+  </HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+  <H1>Gnome ReadNews Inline Variables</H1>
+  
+Some variables are derived from GoldEd (an FTN editor). Others are in the
+same style. They are still applicable only to <CODE>Organization</CODE> and 
+<CODE>User-Agent</CODE> (<CODE>X-Mailer</CODE>) fields in Preferences dialog.
+Of course, you can use <CODE>GRN::subst_vars()</CODE> in your Perl hooks at
+any time.
+<P>
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@ctime</B></TD>
+      <TD BGCOLOR="#EEEEEE">Current local time</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@cname</B></TD>
+      <TD BGCOLOR="#EEEEEE">Current full name</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@email</B></TD>
+      <TD BGCOLOR="#EEEEEE">e-mail address</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@longpid</B></TD>
+      <TD BGCOLOR="#EEEEEE">Full program id (name)</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@pid</B></TD>
+      <TD BGCOLOR="#EEEEEE">Short program id (i.e. "GRN")</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@replyto</B></TD>
+      <TD BGCOLOR="#EEEEEE">Reply-To address</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@un_s</B></TD>
+      <TD BGCOLOR="#EEEEEE"><CODE>`uname -s`</CODE> (Operating system
+      implemetation)</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@un_r</B></TD>
+      <TD BGCOLOR="#EEEEEE"><CODE>`uname -r`</CODE> (Release level)</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@un_m</B></TD>
+      <TD BGCOLOR="#EEEEEE"><CODE>`uname -m`</CODE> (Type of the current
+      hardware platform)</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@un_n</B></TD>
+      <TD BGCOLOR="#EEEEEE"><CODE>`uname -n`</CODE> (Name of the system)</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@uname</B></TD>
+      <TD BGCOLOR="#EEEEEE"><B>@un_s @un_r (@un_m)</B></TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@version</B></TD>
+      <TD BGCOLOR="#EEEEEE">Program version</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>@ver</B></TD>
+      <TD BGCOLOR="#EEEEEE">Program version</TD>
+    </TR>
+  </TABLE>
+</BODY>
+</HTML>

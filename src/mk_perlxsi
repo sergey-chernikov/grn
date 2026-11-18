@@ -1,0 +1,1 @@
+perl -MExtUtils::Embed -e xsinit

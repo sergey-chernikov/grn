@@ -1,4 +1,5 @@
 # grn
 Gnome ReadNews
 
-Quite an old project (started in 1995, AFAIR) - just to preserve sources, no intention to develop it further (yet).
+Quite an old project (started more than 27 years ago) - just to preserve sources,
+no intention to develop it further (yet).

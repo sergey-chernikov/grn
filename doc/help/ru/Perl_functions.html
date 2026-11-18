@@ -1,0 +1,312 @@
+<HTML>
+  <HEAD>
+    <TITLE>Gnome ReadNews Perl Functions</TITLE>
+  </HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+  <H1>Gnome ReadNews Perl Functions</H1>
+
+  All the functions described below are defined in the <CODE>GRN</CODE> module.
+  So, you have to use them like this:
+  <CODE>$var = GRN::function_name(parameter)</CODE>.
+  
+  <UL>Here's the list of functions:
+    <LI><A HREF="#add_command">add_command</A>
+    <LI><A HREF="#add_hook">add_hook</A>
+    <LI><A HREF="#entry_text_delete">entry_text_delete</A>
+    <LI><A HREF="#entry_text_get">entry_text_get</A>
+    <LI><A HREF="#entry_text_set">entry_text_set</A>
+    <LI><A HREF="#error_dialog">error_dialog</A>
+    <LI><A HREF="#get_config">get_config</A>
+    <LI><A HREF="#get_color_pal">get_color_pal</A>
+    <LI><A HREF="#get_font_pal">get_font_pal</A>
+    <LI><A HREF="#html_escape">html_escape</A>
+    <LI><A HREF="#mew_text_delete">mew_text_delete</A>
+    <LI><A HREF="#mew_text_get">mew_text_get</A>
+    <LI><A HREF="#mew_text_get_selection">mew_text_get_selection</A>
+    <LI><A HREF="#mew_text_insert">mew_text_insert</A>
+    <LI><A HREF="#mew_text_select">mew_text_select</A>
+    <LI><A HREF="#subst_vars">subst_vars</A>
+  </UL>
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="add_command"><CODE><B>add_command</B>(context, name, handler)</CODE></A>
+  </FONT>
+  <P>Adds a command named <CODE>name</CODE> (this name will appear in the menu)
+  with the subroutine named <CODE>handler</CODE> to the GRN's list of commands.<BR>
+  <CODE>context</CODE> is an integer which defines the scope of the command:
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">0</TD>
+      <TD BGCOLOR="#EEEEEE">Everywhere</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">1</TD>
+      <TD BGCOLOR="#EEEEEE">Main window</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">2</TD>
+      <TD BGCOLOR="#EEEEEE">Message editing (posting and sending) window</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">3</TD>
+      <TD BGCOLOR="#EEEEEE">Message posting window</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">4</TD>
+      <TD BGCOLOR="#EEEEEE">Message sending window</TD>
+    </TR>
+  </TABLE>
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="add_hook"><CODE><B>add_hook</B>(name, handler)</CODE></A>
+  </FONT>
+  <P>Adds a hook named <CODE>name</CODE> with the subroutine named
+  <CODE>handler</CODE> to the GRN's list of hooks.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="entry_text_delete"><CODE><B>entry_text_delete</B>(entry, start, end)</CODE></A>
+  </FONT>
+  <P>Deletes a text of the entry specified by the <CODE>start</CODE> and
+  <CODE>end</CODE> parameters.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="entry_text_get"><CODE>text <B>entry_text_get</B>(entry, start, end)</CODE></A>
+  </FONT>
+  <P>Returns a text of the entry specified by the <CODE>start</CODE> and
+  <CODE>end</CODE> parameters. The entry is a string. The values can be found
+  in the <CODE>include/grn_consts.h</CODE> and <CODE>src/grn_msgwin.c,
+  src/grn_msgsend.c, src/grn_msgwin.c</CODE> files.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="entry_text_set"><CODE><B>entry_text_set</B>(entry, string)</CODE></A>
+  </FONT>
+  <P>Inserts a text to the current position of the entry.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="error_dialog"><CODE><B>error_dialog</B>(context, message)</CODE></A>
+  </FONT>
+  <P>Makes a call to grn_error() function defined in grn_util.h.
+  <CODE>context</CODE> and <CODE>message</CODE> are strings.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="get_config"><CODE>value <B>get_config</B>(param)</CODE></A>
+  </FONT>
+  <P>Returns a configuration parameter <CODE>param</CODE> (which is a string).
+  The following <CODE>params</CODE> are available:
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><B>Parameter name</B></TD>
+      <TD BGCOLOR="#EEEEEE"><B>Description</B></TD>
+      <TD BGCOLOR="#CCCCFF"><B>Return type</B></TD>
+    </TH>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">ver</TD>
+      <TD BGCOLOR="#EEEEEE">Grn's version</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">version</TD>
+      <TD BGCOLOR="#EEEEEE">Grn's version</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">srv_autoconnect</TD>
+      <TD BGCOLOR="#EEEEEE">True, if "autoconnect to server" is on</TD>
+      <TD BGCOLOR="#CCCCFF">integer</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">scripts_autoload</TD>
+      <TD BGCOLOR="#EEEEEE">If scripts load on startup (always true)</TD>
+      <TD BGCOLOR="#CCCCFF">integer</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">server</TD>
+      <TD BGCOLOR="#EEEEEE">NNTP server name</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">name</TD>
+      <TD BGCOLOR="#EEEEEE">Person's full name</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">email</TD>
+      <TD BGCOLOR="#EEEEEE">E-mail address</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">replyto</TD>
+      <TD BGCOLOR="#EEEEEE">Reply-To address</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">organization</TD>
+      <TD BGCOLOR="#EEEEEE">Organization name</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">re_quoting</TD>
+      <TD BGCOLOR="#EEEEEE">Quoting regexp</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">fontN</TD>
+      <TD BGCOLOR="#EEEEEE">Grn's font names. N may be 0-4</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">fgcolorN</TD>
+      <TD BGCOLOR="#EEEEEE">Grn's foreground colors. N may be 0-2</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">bgcolorN</TD>
+      <TD BGCOLOR="#EEEEEE">Grn's background colors. N may be 0-2</TD>
+      <TD BGCOLOR="#CCCCFF">string</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">cfm_group_read</TD>
+      <TD BGCOLOR="#EEEEEE">"Mark group read" confirmation</TD>
+      <TD BGCOLOR="#CCCCFF">integer</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">cfm_group_unread</TD>
+      <TD BGCOLOR="#EEEEEE">"Mark group unread" confirmation</TD>
+      <TD BGCOLOR="#CCCCFF">integer</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">cfm_thread_read</TD>
+      <TD BGCOLOR="#EEEEEE">"Mark thread read" confirmation</TD>
+      <TD BGCOLOR="#CCCCFF">integer</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">cfm_thread_unread</TD>
+      <TD BGCOLOR="#EEEEEE">"Mark thread unread" confirmation</TD>
+      <TD BGCOLOR="#CCCCFF">integer</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">cfm_abort_posting</TD>
+      <TD BGCOLOR="#EEEEEE">"Abort posting" confirmation</TD>
+      <TD BGCOLOR="#CCCCFF">integer</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">cfm_show_warnings</TD>
+      <TD BGCOLOR="#EEEEEE">"Show warnings" confirmation</TD>
+      <TD BGCOLOR="#CCCCFF">integer</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">cfm_show_messages</TD>
+      <TD BGCOLOR="#EEEEEE">"Show informational messages" confirmation</TD>
+      <TD BGCOLOR="#CCCCFF">integer</TD>
+    </TR>
+  </TABLE>
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="get_color_pal"><CODE>string <B>get_color_pal</B>(index)</CODE></A>
+  </FONT>
+  <P>Returns a color palette element pointed by <CODE>index</CODE>. The first
+  element has an index = 1. The returned value is a string in Xresource format
+  (e.g. "#3FBCDD").
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="get_font_pal"><CODE>string <B>get_font_pal</B>(index)</CODE></A>
+  </FONT>
+  <P>Returns a font palette element pointed by <CODE>index</CODE>. The first
+  element has an index = 1.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="html_escape"><CODE>string <B>html_escape</B>(string)</CODE></A>
+  </FONT>
+  <P>Returns an escaped <CODE>string</CODE> for use with
+  <A HREF="hooks-Perl.html#PreShow">PreShow hook</A> or any other functions
+  which require a valid HTML or XML text.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="mew_text_delete"><CODE><B>mew_text_delete</B> (start, end)</CODE></A>
+  </FONT>
+  <P>Delete a text specified by the <CODE>start</CODE> and <CODE>end</CODE>
+  parameters. Each of them can be <CODE>-1</CODE>.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="mew_text_get"><CODE>text <B>mew_text_get</B> (start, end)</CODE></A>
+  </FONT>
+  <P>Returns a text in message editing widget starting at <CODE>start</CODE>
+  and ending at <CODE>end</CODE>. Any of these parameters can be <CODE>-1</CODE>.
+  This means that the returned text starts at the beginning or at the end of
+  the entire text, respectively.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="mew_text_get_selection"><CODE>(start, end) <B>mew_text_get_selection</B></CODE></A>
+  </FONT>
+  <P>Returns a selection position in message editing widget. Returns empty list
+  if no selection available.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="mew_text_insert"><CODE><B>mew_text_insert</B>(string)</CODE></A>
+  </FONT>
+  <P>Inserts the <CODE>string</CODE> into the message editing widget
+  at the current cursor position.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="mew_text_select"><CODE><B>mew_text_select</B>(start, end)</CODE></A>
+  </FONT>
+  <P>Selects the text in message editing widget from <CODE>start</CODE> to
+  <CODE>end</CODE>.
+
+<P>
+<HR>
+<P>
+  <FONT SIZE="+2">
+    <A NAME="subst_vars"><CODE>string <B>subst_vars</B>(src)</CODE></A>
+  </FONT>
+  <P>Makes a variables substitution in <CODE>src</CODE>. The list of valid
+  variables may be found <A HREF="inline_vars.html">here</A>.
+
+</BODY>
+</HTML>

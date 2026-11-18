@@ -1,0 +1,1676 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2000-09-05 13:01+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: src/grn.c:139 src/grn_about.c:47
+msgid "Gnome ReadNews"
+msgstr ""
+
+#: src/grn.c:185
+msgid ""
+"Specify other configuration file ('=/dir/file=/' is for absolute pathname, "
+"'/dir/file/' is for relative to '~/.gnome' pathname, default is '/GRN/'). "
+"All slashes are mandatory"
+msgstr ""
+
+#: src/grn.c:188
+msgid "config_prefix"
+msgstr ""
+
+#: src/grn.c:212
+#, c-format
+msgid "Missing directory '~/%s' was created."
+msgstr ""
+
+#: src/grn.c:263
+msgid "ReadNews"
+msgstr ""
+
+#: src/grn_about.c:49
+msgid ""
+"You can find some more info on Grn at http://ivvs.ul.ru/~sc/grn\n"
+"Please, report bugs to grn-bugs@ivvs.ul.ru"
+msgstr ""
+
+#: src/grn_commands.c:60 src/grn_nglist.c:321 src/grn_nglist.c:326
+#: src/queue.c:479
+msgid "Socket error"
+msgstr ""
+
+#: src/grn_commands.c:74
+msgid "Not implemented yet"
+msgstr ""
+
+#: src/grn_commands.c:114
+msgid "type"
+msgstr ""
+
+#: src/grn_commands.c:114
+msgid "name"
+msgstr ""
+
+#: src/grn_commands.c:114
+msgid "handler"
+msgstr ""
+
+#: src/grn_commands.c:122
+msgid "Perl scripts list"
+msgstr ""
+
+#: src/grn_commands.c:172
+msgid "Open Perl script"
+msgstr ""
+
+#: src/grn_config.c:141
+msgid "@un_n (change this!)"
+msgstr ""
+
+#: src/grn_config.c:142
+msgid "@longpid v.@ver [@uname]"
+msgstr ""
+
+#: src/grn_find.c:70
+msgid "'From' header"
+msgstr ""
+
+#: src/grn_find.c:73
+msgid "'Subject' header"
+msgstr ""
+
+#: src/grn_find.c:76
+msgid "Message body"
+msgstr ""
+
+#: src/grn_find.c:79
+msgid "Other header:"
+msgstr ""
+
+#: src/grn_find.c:89
+msgid "Regular expression"
+msgstr ""
+
+#: src/grn_find.c:92
+msgid "Case sensitive"
+msgstr ""
+
+#: src/grn_find.c:95
+msgid "Unread only"
+msgstr ""
+
+#: src/grn_find.c:176
+msgid "Find message"
+msgstr ""
+
+#: src/grn_find.c:231
+msgid "Searching"
+msgstr ""
+
+#: src/grn_find.c:231
+msgid "Can't compile regular expression"
+msgstr ""
+
+#: src/grn_find.c:255
+#, c-format
+msgid "Searching in message #%d"
+msgstr ""
+
+#: src/grn_find.c:346
+msgid "Search string not found"
+msgstr ""
+
+#: src/grn_menu.c:49
+msgid "Show newsgroups"
+msgstr ""
+
+#: src/grn_menu.c:49
+msgid "Show the list of available newsgroups"
+msgstr ""
+
+#: src/grn_menu.c:51
+msgid "Message headers.."
+msgstr ""
+
+#: src/grn_menu.c:51
+msgid "Show all message headers"
+msgstr ""
+
+#: src/grn_menu.c:60
+msgid "Prev unread group"
+msgstr ""
+
+#: src/grn_menu.c:60
+msgid "Go to previous group with unread messages"
+msgstr ""
+
+#: src/grn_menu.c:62
+msgid "Next unread group"
+msgstr ""
+
+#: src/grn_menu.c:62
+msgid "Go to next group with unread messages"
+msgstr ""
+
+#: src/grn_menu.c:65
+msgid "Mark unread"
+msgstr ""
+
+#: src/grn_menu.c:65
+msgid "Mark currently selected group unread"
+msgstr ""
+
+#: src/grn_menu.c:67
+msgid "Mark read"
+msgstr ""
+
+#: src/grn_menu.c:67
+msgid "Mark currently selected group read (catchup)"
+msgstr ""
+
+#: src/grn_menu.c:74 src/grn_menu.c:132 src/grn_menu.c:570 src/grn_menu.c:599
+#: src/grn_menu.c:615 src/grn_mime.c:685
+msgid "Open"
+msgstr ""
+
+#: src/grn_menu.c:74
+msgid "Open currently selected newsgroup"
+msgstr ""
+
+#: src/grn_menu.c:76
+msgid "Subscribe"
+msgstr ""
+
+#: src/grn_menu.c:76
+msgid "Subscribe to the current group"
+msgstr ""
+
+#: src/grn_menu.c:78
+msgid "Unsubscribe"
+msgstr ""
+
+#: src/grn_menu.c:78
+msgid "Unsubscribe from the current group"
+msgstr ""
+
+#: src/grn_menu.c:81 src/grn_menu.c:184
+msgid "Navigation"
+msgstr ""
+
+#: src/grn_menu.c:83
+msgid "ReRead list"
+msgstr ""
+
+#: src/grn_menu.c:83
+msgid "Re-read the current newsgroups list"
+msgstr ""
+
+#: src/grn_menu.c:90 src/grn_menu.c:102
+msgid "To group"
+msgstr ""
+
+#: src/grn_menu.c:92 src/grn_menu.c:104
+msgid "Via mail"
+msgstr ""
+
+#: src/grn_menu.c:114 src/grn_menu.c:456 src/grn_msgwin.c:480
+msgid "Proportional font"
+msgstr ""
+
+#: src/grn_menu.c:114
+msgid "Variable width font"
+msgstr ""
+
+#: src/grn_menu.c:116 src/grn_menu.c:457 src/grn_msgwin.c:481
+msgid "Monospaced font"
+msgstr ""
+
+#: src/grn_menu.c:116
+msgid "Single width font"
+msgstr ""
+
+#: src/grn_menu.c:125
+msgid "MIME"
+msgstr ""
+
+#: src/grn_menu.c:125
+msgid "View MIME structure"
+msgstr ""
+
+#: src/grn_menu.c:132
+msgid "View current message"
+msgstr ""
+
+#: src/grn_menu.c:135
+msgid "Post new"
+msgstr ""
+
+#: src/grn_menu.c:135
+msgid "Compose and post message to current newsgroup"
+msgstr ""
+
+#: src/grn_menu.c:137
+msgid "Send new"
+msgstr ""
+
+#: src/grn_menu.c:137
+msgid "Compose and send message via SMTP"
+msgstr ""
+
+#: src/grn_menu.c:139 src/grn_menu.c:572
+msgid "Reply"
+msgstr ""
+
+#: src/grn_menu.c:141 src/grn_menu.c:574
+msgid "Forward"
+msgstr ""
+
+#: src/grn_menu.c:144 src/grn_menu.c:456 src/grn_menu.c:457 src/grn_menu.c:581
+#: src/grn_menu.c:601 src/grn_menu.c:617 src/grn_mime.c:692
+msgid "View"
+msgstr ""
+
+#: src/grn_menu.c:144
+msgid "Some message viewing options"
+msgstr ""
+
+#: src/grn_menu.c:146 src/grn_menu.c:303 src/grn_menu.c:346 src/grn_menu.c:576
+#: src/grn_msgpost.c:681 src/grn_msgsend.c:498
+msgid "File"
+msgstr ""
+
+#: src/grn_menu.c:153
+msgid "Expand current thread"
+msgstr ""
+
+#: src/grn_menu.c:155
+msgid "Expand all threads"
+msgstr ""
+
+#: src/grn_menu.c:157
+msgid "Collapse current thread"
+msgstr ""
+
+#: src/grn_menu.c:159
+msgid "Collapse all threads"
+msgstr ""
+
+#: src/grn_menu.c:162
+msgid "Prev unread message"
+msgstr ""
+
+#: src/grn_menu.c:162
+msgid "Go to previous unread message"
+msgstr ""
+
+#: src/grn_menu.c:164
+msgid "Prev unread thread"
+msgstr ""
+
+#: src/grn_menu.c:164
+msgid "Go to previous unread thread"
+msgstr ""
+
+#: src/grn_menu.c:166
+msgid "Next unread message"
+msgstr ""
+
+#: src/grn_menu.c:166
+msgid "Go to next unread message"
+msgstr ""
+
+#: src/grn_menu.c:168
+msgid "Next unread thread"
+msgstr ""
+
+#: src/grn_menu.c:168
+msgid "Go to next unread thread"
+msgstr ""
+
+#: src/grn_menu.c:171
+msgid "Mark message unread"
+msgstr ""
+
+#: src/grn_menu.c:171
+msgid "Mark current message as unread"
+msgstr ""
+
+#: src/grn_menu.c:173 src/grn_prefs.c:482
+msgid "Mark thread unread"
+msgstr ""
+
+#: src/grn_menu.c:173
+msgid "Mark current thread as unread"
+msgstr ""
+
+#: src/grn_menu.c:175
+msgid "Mark message read"
+msgstr ""
+
+#: src/grn_menu.c:175
+msgid "Mark current message as read"
+msgstr ""
+
+#: src/grn_menu.c:177 src/grn_prefs.c:481
+msgid "Mark thread read"
+msgstr ""
+
+#: src/grn_menu.c:177
+msgid "Mark current thread as read"
+msgstr ""
+
+#: src/grn_menu.c:187
+msgid "Search..."
+msgstr ""
+
+#: src/grn_menu.c:187
+msgid "Search a message in current group"
+msgstr ""
+
+#: src/grn_menu.c:189 src/grn_menu.c:625
+msgid "Search again"
+msgstr ""
+
+#: src/grn_menu.c:192 src/grn_menu.c:259
+msgid "Back"
+msgstr ""
+
+#: src/grn_menu.c:192
+msgid "Return to newsgroups listing"
+msgstr ""
+
+#: src/grn_menu.c:200
+msgid "Font palette..."
+msgstr ""
+
+#: src/grn_menu.c:200
+msgid "Edit font palette"
+msgstr ""
+
+#: src/grn_menu.c:202
+msgid "Color palette..."
+msgstr ""
+
+#: src/grn_menu.c:202
+msgid "Edit color palette"
+msgstr ""
+
+#: src/grn_menu.c:205
+msgid "Save preferences"
+msgstr ""
+
+#: src/grn_menu.c:213 src/grn_menu.c:272 src/grn_msgpost.c:682
+#: src/grn_msgsend.c:499
+msgid "Load..."
+msgstr ""
+
+#: src/grn_menu.c:213
+msgid "Load script"
+msgstr ""
+
+#: src/grn_menu.c:215
+msgid "List.."
+msgstr ""
+
+#: src/grn_menu.c:215
+msgid "View list of loaded scripts"
+msgstr ""
+
+#: src/grn_menu.c:217
+msgid "Restart all"
+msgstr ""
+
+#: src/grn_menu.c:217
+msgid "Restart all loaded scripts"
+msgstr ""
+
+#: src/grn_menu.c:224 src/grn_menu.c:474 src/grn_menu.c:541
+msgid "Perl"
+msgstr ""
+
+#: src/grn_menu.c:239
+msgid "GRN"
+msgstr ""
+
+#: src/grn_menu.c:241 src/grn_menu.c:588 src/grn_menu.c:589
+msgid "Newsgroup"
+msgstr ""
+
+#: src/grn_menu.c:241
+msgid "Newsgroup operations"
+msgstr ""
+
+#: src/grn_menu.c:243 src/grn_menu.c:597 src/grn_menu.c:608 src/grn_menu.c:625
+#: src/grn_nglist.c:441
+msgid "Threadlist"
+msgstr ""
+
+#: src/grn_menu.c:243
+msgid "Threadlist operations"
+msgstr ""
+
+#: src/grn_menu.c:245 src/grn_menu.c:348 src/grn_menu.c:456 src/grn_menu.c:457
+#: src/grn_menu.c:465 src/grn_menu.c:570 src/grn_menu.c:572 src/grn_menu.c:574
+#: src/grn_menu.c:576 src/grn_menu.c:580 src/grn_menu.c:581 src/grn_menu.c:599
+#: src/grn_menu.c:601 src/grn_menu.c:615 src/grn_menu.c:617
+#: src/grn_msgsend.c:493
+msgid "Message"
+msgstr ""
+
+#: src/grn_menu.c:245
+msgid "Article (message) opertaions"
+msgstr ""
+
+#: src/grn_menu.c:247
+msgid "Settings"
+msgstr ""
+
+#: src/grn_menu.c:249 src/grn_menu.c:474 src/grn_menu.c:541
+msgid "Scripts"
+msgstr ""
+
+#: src/grn_menu.c:251 src/grn_menu.c:309 src/grn_menu.c:352
+msgid "Help"
+msgstr ""
+
+#: src/grn_menu.c:259
+msgid "Return to previous window"
+msgstr ""
+
+#: src/grn_menu.c:261
+msgid "Next"
+msgstr ""
+
+#: src/grn_menu.c:261
+msgid "Go forward"
+msgstr ""
+
+#: src/grn_menu.c:264
+msgid "Preferences"
+msgstr ""
+
+#: src/grn_menu.c:264
+msgid "Configure the application"
+msgstr ""
+
+#: src/grn_menu.c:272
+msgid "Load file to current window"
+msgstr ""
+
+#: src/grn_menu.c:274 src/grn_mime.c:678
+msgid "Save..."
+msgstr ""
+
+#: src/grn_menu.c:274
+msgid "Save current message to file"
+msgstr ""
+
+#: src/grn_menu.c:281 src/grn_menu.c:317 src/grn_msgpost.c:676
+msgid "Post"
+msgstr ""
+
+#: src/grn_menu.c:281
+msgid "Post message to group"
+msgstr ""
+
+#: src/grn_menu.c:283 src/grn_menu.c:319 src/grn_menu.c:333 src/grn_menu.c:362
+#: src/grn_msgpost.c:677 src/grn_msgsend.c:495
+msgid "Cancel"
+msgstr ""
+
+#: src/grn_menu.c:283
+msgid "Cancel message posting"
+msgstr ""
+
+#: src/grn_menu.c:286 src/grn_menu.c:336 src/grn_msgpost.c:680
+#: src/grn_msgsend.c:497
+msgid "Attachments..."
+msgstr ""
+
+#: src/grn_menu.c:286 src/grn_menu.c:336
+msgid "View attachments dialog"
+msgstr ""
+
+#: src/grn_menu.c:289 src/grn_menu.c:322 src/grn_msgpost.c:678
+msgid "Newsgroups"
+msgstr ""
+
+#: src/grn_menu.c:289
+msgid "Select newsgroup[s]"
+msgstr ""
+
+#: src/grn_menu.c:291 src/grn_menu.c:339 src/grn_mhdrwin.c:476
+#: src/grn_msgpost.c:679 src/grn_msgsend.c:496
+msgid "Edit headers"
+msgstr ""
+
+#: src/grn_menu.c:291 src/grn_menu.c:324
+msgid "Edit article headers"
+msgstr ""
+
+#: src/grn_menu.c:305 src/grn_msgpost.c:675
+msgid "Article"
+msgstr ""
+
+#: src/grn_menu.c:307 src/grn_menu.c:350 src/grn_menu.c:510
+msgid "Macros"
+msgstr ""
+
+#: src/grn_menu.c:317
+msgid "Post article"
+msgstr ""
+
+#: src/grn_menu.c:319
+msgid "Cancel posting"
+msgstr ""
+
+#: src/grn_menu.c:322 src/grn_nglist.c:984
+msgid "Select newsgroups"
+msgstr ""
+
+#: src/grn_menu.c:324 src/grn_menu.c:368
+msgid "Headers"
+msgstr ""
+
+#: src/grn_menu.c:331 src/grn_menu.c:360 src/grn_msgsend.c:494
+msgid "Send"
+msgstr ""
+
+#: src/grn_menu.c:331
+msgid "Send message via SMTP"
+msgstr ""
+
+#: src/grn_menu.c:333
+msgid "Cancel message sending"
+msgstr ""
+
+#: src/grn_menu.c:339 src/grn_menu.c:368
+msgid "Edit message headers"
+msgstr ""
+
+#: src/grn_menu.c:360
+msgid "Send message"
+msgstr ""
+
+#: src/grn_menu.c:362
+msgid "Cancel sending"
+msgstr ""
+
+#: src/grn_menu.c:365
+msgid "Attachments"
+msgstr ""
+
+#: src/grn_menu.c:365
+msgid "View message attachments"
+msgstr ""
+
+#: src/grn_menu.c:379 src/grn_mime.c:724
+msgid "MIME structure"
+msgstr ""
+
+#: src/grn_menu.c:379
+msgid "MIME structure dialog"
+msgstr ""
+
+#: src/grn_menu.c:388
+msgid "HTML source"
+msgstr ""
+
+#: src/grn_mhdrwin.c:102 src/grn_mhdrwin.c:237
+msgid "Message headers"
+msgstr ""
+
+#: src/grn_mhdrwin.c:211
+#, c-format
+msgid "Headers for '%s'"
+msgstr ""
+
+#: src/grn_mhdrwin.c:212
+#, c-format
+msgid "Headers for msg #%ld in %s"
+msgstr ""
+
+#: src/grn_mhdrwin.c:336
+msgid "Header"
+msgstr ""
+
+#: src/grn_mhdrwin.c:336
+msgid "Value"
+msgstr ""
+
+#: src/grn_mhdrwin.c:355
+msgid "Header:"
+msgstr ""
+
+#: src/grn_mhdrwin.c:362
+msgid "Value:"
+msgstr ""
+
+#: src/grn_mhdrwin.c:374
+msgid "Add"
+msgstr ""
+
+#: src/grn_mhdrwin.c:379
+msgid "Modify"
+msgstr ""
+
+#: src/grn_mhdrwin.c:384 src/grn_prefs.c:833 src/grn_prefs.c:1037
+msgid "Delete"
+msgstr ""
+
+#: src/grn_mime.c:398
+#, c-format
+msgid "Mutt message: %s"
+msgstr ""
+
+#: src/grn_mime.c:409
+#, c-format
+msgid "Mutt error: %s"
+msgstr ""
+
+#: src/grn_mime.c:471
+msgid "Already exists"
+msgstr ""
+
+#: src/grn_mime.c:497
+msgid "I/O problem"
+msgstr ""
+
+#: src/grn_mime.c:497
+msgid "Read and written lengths mismatch"
+msgstr ""
+
+#: src/grn_mime.c:505
+msgid "The following file can't be opened for writing"
+msgstr ""
+
+#: src/grn_mime.c:521
+msgid "Save MIME part"
+msgstr ""
+
+#: src/grn_mime.c:523
+msgid "Decode before saving"
+msgstr ""
+
+#: src/grn_mime.c:627
+#, c-format
+msgid "Enter command (%f may be used):"
+msgstr ""
+
+#: src/grn_mime.c:632
+msgid "Execute command"
+msgstr ""
+
+#: src/grn_mime.c:650
+msgid "Type"
+msgstr ""
+
+#: src/grn_mime.c:650 src/grn_nglist.c:215 src/grn_nglist.c:870
+msgid "Description"
+msgstr ""
+
+#: src/grn_mime.c:650 src/grn_threadlist.c:590
+msgid "Size"
+msgstr ""
+
+#: src/grn_mime.c:650
+msgid "Encoding"
+msgstr ""
+
+#: src/grn_mime.c:650
+msgid "Disposition"
+msgstr ""
+
+#: src/grn_mime.c:699
+msgid "Execute..."
+msgstr ""
+
+#: src/grn_msgpost.c:102 src/grn_msgsend.c:94
+msgid "Message body is empty"
+msgstr ""
+
+#: src/grn_msgpost.c:110 src/grn_msgsend.c:102
+msgid "No linefeeds in the body"
+msgstr ""
+
+#: src/grn_msgpost.c:129 src/grn_msgsend.c:121
+#, c-format
+msgid "The body has more than 75% of quoting"
+msgstr ""
+
+#: src/grn_msgpost.c:144 src/grn_msgsend.c:136
+msgid "'From' field is empty"
+msgstr ""
+
+#: src/grn_msgpost.c:151
+msgid "No newsgroups specified"
+msgstr ""
+
+#: src/grn_msgpost.c:160
+#, c-format
+msgid "Invalid group[s]: %s"
+msgstr ""
+
+#: src/grn_msgpost.c:168 src/grn_msgsend.c:160
+msgid "Subject is empty"
+msgstr ""
+
+#: src/grn_msgpost.c:295 src/grn_msgsend.c:190
+msgid "<none>"
+msgstr ""
+
+#: src/grn_msgpost.c:434 src/grn_msgpost.c:646
+msgid "GRN post article"
+msgstr ""
+
+#: src/grn_msgpost.c:445 src/grn_msgsend.c:279 src/grn_msgwin.c:61
+msgid "From:"
+msgstr ""
+
+#: src/grn_msgpost.c:453
+msgid "Newsgroups:"
+msgstr ""
+
+#: src/grn_msgpost.c:461 src/grn_msgsend.c:295 src/grn_msgwin.c:82
+msgid "Subject:"
+msgstr ""
+
+#: src/grn_msgpost.c:485 src/grn_msgpost.c:1156
+msgid "Are you sure you wish to abort posting?"
+msgstr ""
+
+#: src/grn_msgpost.c:889 src/grn_msgpost.c:907 src/grn_msgpost.c:931
+msgid "Posting disabled by the server"
+msgstr ""
+
+#: src/grn_msgpost.c:1104
+msgid ""
+"Posting abandoned!\n"
+"\n"
+msgstr ""
+
+#: src/grn_msgpost.c:1107 src/grn_msgsend.c:797
+msgid "Errors:\n"
+msgstr ""
+
+#: src/grn_msgpost.c:1112 src/grn_msgsend.c:802
+msgid "Warnings:\n"
+msgstr ""
+
+#: src/grn_msgpost.c:1125 src/grn_msgsend.c:815
+msgid "Some warnings encountered:\n"
+msgstr ""
+
+#: src/grn_msgpost.c:1128
+msgid ""
+"\n"
+"Do you wish to continue posting?"
+msgstr ""
+
+#: src/grn_msgpost.c:1190
+msgid "Can't open file"
+msgstr ""
+
+#: src/grn_msgpost.c:1208
+msgid "Load file"
+msgstr ""
+
+#: src/grn_msgsend.c:143
+msgid "No recipients specified"
+msgstr ""
+
+#: src/grn_msgsend.c:153
+msgid "Invalid recipient[s]"
+msgstr ""
+
+#: src/grn_msgsend.c:154
+msgid "Some recipients are invalid"
+msgstr ""
+
+#: src/grn_msgsend.c:268 src/grn_msgsend.c:464
+msgid "GRN send message"
+msgstr ""
+
+#: src/grn_msgsend.c:287 src/grn_msgwin.c:70
+msgid "To:"
+msgstr ""
+
+#: src/grn_msgsend.c:320 src/grn_msgsend.c:849
+msgid "Are you sure you wish to abort sending?"
+msgstr ""
+
+#: src/grn_msgsend.c:794
+msgid ""
+"Sending abandoned!\n"
+"\n"
+msgstr ""
+
+#: src/grn_msgsend.c:818
+msgid ""
+"\n"
+"Do you wish to continue sending?"
+msgstr ""
+
+#: src/grn_msgwin.c:156
+#, c-format
+msgid "Size: %lu bytes"
+msgstr ""
+
+#: src/grn_nglist.c:129 src/grn_nglist.c:183
+#, c-format
+msgid "Total %ld group[s]; %ld group[s] with unread messages"
+msgstr ""
+
+#: src/grn_nglist.c:215 src/grn_nglist.c:870
+msgid "No"
+msgstr ""
+
+#: src/grn_nglist.c:215 src/grn_nglist.c:870
+msgid "Unread"
+msgstr ""
+
+#: src/grn_nglist.c:215 src/grn_nglist.c:870
+msgid "Name"
+msgstr ""
+
+#: src/grn_nglist.c:229
+msgid "Toggle all/subscribed/unread groups"
+msgstr ""
+
+#: src/grn_nglist.c:230
+msgid "Sort by unread messages"
+msgstr ""
+
+#: src/grn_nglist.c:231
+msgid "Sort by name"
+msgstr ""
+
+#: src/grn_nglist.c:252 src/grn_nglist.c:894
+msgid "Find newsgroup:"
+msgstr ""
+
+#: src/grn_nglist.c:259
+msgid "Groups listing"
+msgstr ""
+
+#: src/grn_nglist.c:296
+#, c-format
+msgid "Connecting to server '%s'..."
+msgstr ""
+
+#: src/grn_nglist.c:298 src/nntp.c:634 src/queue.c:484 src/queue.c:524
+msgid "NNTP connect"
+msgstr ""
+
+#: src/grn_nglist.c:302
+#, c-format
+msgid "Connection to server '%s' failed"
+msgstr ""
+
+#: src/grn_nglist.c:305
+msgid "Fetching grouplist from server..."
+msgstr ""
+
+#: src/grn_nglist.c:310
+msgid "Reading newsrc file..."
+msgstr ""
+
+#: src/grn_nglist.c:313
+msgid "Calculating groups status..."
+msgstr ""
+
+#: src/grn_nglist.c:316
+msgid "Fetching newsgroups descriptions from server..."
+msgstr ""
+
+#: src/grn_nglist.c:441
+#, c-format
+msgid "%s - %s - %s"
+msgstr ""
+
+#: src/grn_nglist.c:512
+#, c-format
+msgid "Total %ld groups; %ld groups with unread messages"
+msgstr ""
+
+#: src/grn_nglist.c:644
+#, c-format
+msgid ""
+"Do you really wish to catchup group\n"
+"%s?"
+msgstr ""
+
+#: src/grn_nglist.c:690
+#, c-format
+msgid ""
+"Do you really wish to mark group\n"
+"'%s' unread?"
+msgstr ""
+
+#: src/grn_prefs.c:89
+msgid "Text"
+msgstr ""
+
+#: src/grn_prefs.c:89
+msgid "Icons"
+msgstr ""
+
+#: src/grn_prefs.c:89
+msgid "Both"
+msgstr ""
+
+#: src/grn_prefs.c:89
+msgid "Gnome setting"
+msgstr ""
+
+#: src/grn_prefs.c:117
+msgid "GRN Preferences"
+msgstr ""
+
+#: src/grn_prefs.c:128
+msgid "Server"
+msgstr ""
+
+#: src/grn_prefs.c:131
+msgid "Identity"
+msgstr ""
+
+#: src/grn_prefs.c:134
+msgid "Display"
+msgstr ""
+
+#: src/grn_prefs.c:137
+msgid "Fonts"
+msgstr ""
+
+#: src/grn_prefs.c:140
+msgid "Colors"
+msgstr ""
+
+#: src/grn_prefs.c:143
+msgid "Confirmations"
+msgstr ""
+
+#: src/grn_prefs.c:146
+msgid "Paths"
+msgstr ""
+
+#: src/grn_prefs.c:219
+msgid "NNTP Server:"
+msgstr ""
+
+#: src/grn_prefs.c:226
+msgid "Connect to NNTP server at startup"
+msgstr ""
+
+#: src/grn_prefs.c:230
+msgid "NNTP server needs authentication"
+msgstr ""
+
+#: src/grn_prefs.c:234
+msgid "Login:"
+msgstr ""
+
+#: src/grn_prefs.c:241
+msgid "Password:"
+msgstr ""
+
+#: src/grn_prefs.c:248
+msgid "Download groups descriptions"
+msgstr ""
+
+#: src/grn_prefs.c:261
+msgid "SMTP Server:"
+msgstr ""
+
+#: src/grn_prefs.c:280
+msgid "Your name:"
+msgstr ""
+
+#: src/grn_prefs.c:287
+msgid "e-mail address:"
+msgstr ""
+
+#: src/grn_prefs.c:294
+msgid "Reply-to address:"
+msgstr ""
+
+#: src/grn_prefs.c:298
+msgid "Specify your Reply-to address if only it differs from e-mail address"
+msgstr ""
+
+#: src/grn_prefs.c:302
+msgid "Organization:"
+msgstr ""
+
+#: src/grn_prefs.c:309
+msgid "User-Agent:"
+msgstr ""
+
+#: src/grn_prefs.c:328
+msgid "newsrc:"
+msgstr ""
+
+#: src/grn_prefs.c:335
+msgid "backup newsrc:"
+msgstr ""
+
+#: src/grn_prefs.c:356
+msgid "Toolbars"
+msgstr ""
+
+#: src/grn_prefs.c:370
+msgid "Show tooltips"
+msgstr ""
+
+#: src/grn_prefs.c:373
+msgid "Smooth scrolling"
+msgstr ""
+
+#: src/grn_prefs.c:379
+msgid "Quoting regexp:"
+msgstr ""
+
+#: src/grn_prefs.c:400
+msgid "Article body proportional font"
+msgstr ""
+
+#: src/grn_prefs.c:401
+msgid "Article body monospaced font"
+msgstr ""
+
+#: src/grn_prefs.c:402
+msgid "Message headers font"
+msgstr ""
+
+#: src/grn_prefs.c:403
+msgid "Threadlist font"
+msgstr ""
+
+#: src/grn_prefs.c:404
+msgid "Groups listing font"
+msgstr ""
+
+#: src/grn_prefs.c:444
+msgid "Foreground"
+msgstr ""
+
+#: src/grn_prefs.c:446
+msgid "Background"
+msgstr ""
+
+#: src/grn_prefs.c:453
+msgid "Article body"
+msgstr ""
+
+#: src/grn_prefs.c:460
+msgid "Quoted text"
+msgstr ""
+
+#: src/grn_prefs.c:466
+msgid "Signature"
+msgstr ""
+
+#: src/grn_prefs.c:479
+msgid "Catchup group"
+msgstr ""
+
+#: src/grn_prefs.c:480
+msgid "Mark group unread"
+msgstr ""
+
+#: src/grn_prefs.c:483
+msgid "Abort posting"
+msgstr ""
+
+#: src/grn_prefs.c:484
+msgid "Show warnings"
+msgstr ""
+
+#: src/grn_prefs.c:485
+msgid "Show informational messages"
+msgstr ""
+
+#: src/grn_prefs.c:699
+msgid "Add new font"
+msgstr ""
+
+#: src/grn_prefs.c:726
+msgid "Edit font"
+msgstr ""
+
+#: src/grn_prefs.c:781 src/grn_prefs.c:988
+msgid "Index"
+msgstr ""
+
+#: src/grn_prefs.c:781
+msgid "Font"
+msgstr ""
+
+#: src/grn_prefs.c:792
+msgid "Font palette"
+msgstr ""
+
+#: src/grn_prefs.c:818
+msgid "Test"
+msgstr ""
+
+#: src/grn_prefs.c:825 src/grn_prefs.c:1028
+msgid "Add..."
+msgstr ""
+
+#: src/grn_prefs.c:829
+msgid "Edit..."
+msgstr ""
+
+#: src/grn_prefs.c:869
+msgid "Red"
+msgstr ""
+
+#: src/grn_prefs.c:870
+msgid "Green"
+msgstr ""
+
+#: src/grn_prefs.c:871
+msgid "Blue"
+msgstr ""
+
+#: src/grn_prefs.c:924
+msgid "Add new color"
+msgstr ""
+
+#: src/grn_prefs.c:988
+msgid "Color"
+msgstr ""
+
+#: src/grn_prefs.c:999
+msgid "Color palette"
+msgstr ""
+
+#: src/grn_prefs.c:1033
+msgid "Edit current color"
+msgstr ""
+
+#: src/grn_threadlist.c:60
+msgid "Sorting articles..."
+msgstr ""
+
+#: src/grn_threadlist.c:107
+msgid "Sorting threads..."
+msgstr ""
+
+#: src/grn_threadlist.c:276
+msgid "Threading articles..."
+msgstr ""
+
+#: src/grn_threadlist.c:454
+#, c-format
+msgid ""
+"Total %ld message[s] in %ld thread[s]. %ld unread message[s] in %ld thread[s]"
+msgstr ""
+
+#: src/grn_threadlist.c:546
+msgid "Eliminating read articles..."
+msgstr ""
+
+#: src/grn_threadlist.c:590
+msgid "N"
+msgstr ""
+
+#: src/grn_threadlist.c:590
+msgid "Subject"
+msgstr ""
+
+#: src/grn_threadlist.c:590
+msgid "Author"
+msgstr ""
+
+#: src/grn_threadlist.c:590
+msgid "Date"
+msgstr ""
+
+#: src/grn_threadlist.c:590
+msgid "Lines"
+msgstr ""
+
+#: src/grn_threadlist.c:606
+msgid "Select threading method"
+msgstr ""
+
+#: src/grn_threadlist.c:607
+msgid "Sort by score"
+msgstr ""
+
+#: src/grn_threadlist.c:608
+msgid "Toggle visibility of read messages"
+msgstr ""
+
+#: src/grn_threadlist.c:609
+msgid "Sort by subject"
+msgstr ""
+
+#: src/grn_threadlist.c:610
+msgid "Sort by author"
+msgstr ""
+
+#: src/grn_threadlist.c:611
+msgid "Sort by date"
+msgstr ""
+
+#: src/grn_threadlist.c:612
+msgid "Sort by lines"
+msgstr ""
+
+#: src/grn_threadlist.c:613
+msgid "Sort by size"
+msgstr ""
+
+#: src/grn_threadlist.c:774
+msgid "nothing"
+msgstr ""
+
+#: src/grn_threadlist.c:774
+msgid "references"
+msgstr ""
+
+#: src/grn_threadlist.c:774
+msgid "subject"
+msgstr ""
+
+#: src/grn_threadlist.c:774
+msgid "ref+subj"
+msgstr ""
+
+#: src/grn_threadlist.c:782
+#, c-format
+msgid "Thread by %s; (now: by %s)"
+msgstr ""
+
+#: src/grn_threadlist.c:981
+#, c-format
+msgid "%s - %s, msg #%d"
+msgstr ""
+
+#: src/grn_threadlist.c:1308
+msgid "Do you really wish to catchup current thread?"
+msgstr ""
+
+#: src/grn_threadlist.c:1342
+msgid "Do you really wish to mark current thread unread?"
+msgstr ""
+
+#: src/grn_util.c:163
+#, c-format
+msgid "Error loading font '%s'"
+msgstr ""
+
+#: src/grn_util.c:174
+msgid "Can't allocate foreground color"
+msgstr ""
+
+#: src/grn_util.c:183
+msgid "Can't allocate background color"
+msgstr ""
+
+#: src/grn_util.c:196
+#, c-format
+msgid "Loading image from '%s'..."
+msgstr ""
+
+#: src/grn_util.c:201
+msgid "Error!\n"
+msgstr ""
+
+#: src/grn_util.c:206
+msgid "Failed!\n"
+msgstr ""
+
+#: src/grn_util.c:207
+msgid "Ok.\n"
+msgstr ""
+
+#: src/grn_util.c:612
+msgid "Sun"
+msgstr ""
+
+#: src/grn_util.c:612
+msgid "Mon"
+msgstr ""
+
+#: src/grn_util.c:612
+msgid "Tue"
+msgstr ""
+
+#: src/grn_util.c:612
+msgid "Wed"
+msgstr ""
+
+#: src/grn_util.c:612
+msgid "Thu"
+msgstr ""
+
+#: src/grn_util.c:613
+msgid "Fri"
+msgstr ""
+
+#: src/grn_util.c:613
+msgid "Sat"
+msgstr ""
+
+#: src/grn_util.c:614
+msgid "Jan"
+msgstr ""
+
+#: src/grn_util.c:614
+msgid "Feb"
+msgstr ""
+
+#: src/grn_util.c:614
+msgid "Mar"
+msgstr ""
+
+#: src/grn_util.c:614
+msgid "Apr"
+msgstr ""
+
+#: src/grn_util.c:614
+msgid "May"
+msgstr ""
+
+#: src/grn_util.c:615
+msgid "Jun"
+msgstr ""
+
+#: src/grn_util.c:615
+msgid "Jul"
+msgstr ""
+
+#: src/grn_util.c:615
+msgid "Aug"
+msgstr ""
+
+#: src/grn_util.c:615
+msgid "Sep"
+msgstr ""
+
+#: src/grn_util.c:615
+msgid "Oct"
+msgstr ""
+
+#: src/grn_util.c:616
+msgid "Nov"
+msgstr ""
+
+#: src/grn_util.c:616
+msgid "Dec"
+msgstr ""
+
+#: src/nntp.c:60 src/smtp.c:50
+msgid "no server name given"
+msgstr ""
+
+#: src/nntp.c:66 src/nntp.c:79 src/nntp.c:85 src/nntp.c:98 src/nntp.c:153
+#: src/nntp.c:176 src/nntp.c:193 src/nntp.c:206 src/nntp.c:235 src/nntp.c:259
+#: src/nntp.c:273 src/nntp.c:305 src/nntp.c:332 src/nntp.c:345 src/nntp.c:401
+#: src/nntp.c:520 src/nntp.c:527 src/nntp.c:556 src/nntp.c:562 src/nntp.c:569
+#: src/nntp.c:597 src/nntp.c:645 src/nntp.c:653 src/smtp.c:34 src/smtp.c:56
+#: src/smtp.c:75 src/smtp.c:95 src/smtp.c:118 src/smtp.c:131 src/smtp.c:148
+msgid "server not responding"
+msgstr ""
+
+#: src/nntp.c:70 src/nntp.c:88 src/nntp.c:199 src/nntp.c:265
+#, c-format
+msgid ""
+"server said:\n"
+"%s"
+msgstr ""
+
+#: src/nntp.c:71 src/nntp.c:102 src/nntp.c:174 src/nntp.c:198 src/nntp.c:264
+#: src/nntp.c:337 src/nntp.c:524 src/nntp.c:566 src/nntp.c:663 src/smtp.c:38
+#: src/smtp.c:79 src/smtp.c:123 src/smtp.c:136
+msgid "error in server reply"
+msgstr ""
+
+#: src/nntp.c:78
+msgid "AUTHINFO user failed"
+msgstr ""
+
+#: src/nntp.c:84
+msgid "AUTHINFO pass failed"
+msgstr ""
+
+#: src/nntp.c:89
+msgid "Authentication failed"
+msgstr ""
+
+#: src/nntp.c:94
+#, c-format
+msgid ""
+"Authentication doesn't required for\n"
+"%s"
+msgstr ""
+
+#: src/nntp.c:97
+msgid "MODE READER failed"
+msgstr ""
+
+#: src/nntp.c:151 src/nntp.c:164 src/nntp.c:188 src/nntp.c:254 src/nntp.c:327
+#: src/smtp.c:94 src/smtp.c:113 src/smtp.c:130
+msgid "can't send command to server"
+msgstr ""
+
+#: src/nntp.c:338
+#, c-format
+msgid ""
+"server said:\n"
+"%s\n"
+msgstr ""
+
+#: src/nntp.c:519
+msgid "server<-HEAD failed"
+msgstr ""
+
+#: src/nntp.c:535 src/nntp.c:580
+msgid "transfer interrupted"
+msgstr ""
+
+#: src/nntp.c:561
+msgid "server<-BODY failed"
+msgstr ""
+
+#: src/nntp.c:620
+#, c-format
+msgid "Fetching article #%d from group %s..."
+msgstr ""
+
+#: src/nntp.c:630
+msgid "NNTP get article"
+msgstr ""
+
+#: src/nntp.c:632 src/queue.c:482
+msgid "NNTP set group"
+msgstr ""
+
+#: src/nntp.c:644
+msgid "server<-POST failed"
+msgstr ""
+
+#: src/nntp.c:651
+msgid "posting failed"
+msgstr ""
+
+#: src/nntp.c:659
+msgid "article refused by server"
+msgstr ""
+
+#: src/nntp.c:665
+msgid "undefined error"
+msgstr ""
+
+#: src/queue.c:146
+msgid "NNTP noop"
+msgstr ""
+
+#: src/queue.c:192
+msgid "Some strange behavior of grnq_free()"
+msgstr ""
+
+#: src/queue.c:252
+msgid "Some strange behavior of grnq_run()"
+msgstr ""
+
+#: src/queue.c:467
+#, c-format
+msgid "Fetching article list for group %s..."
+msgstr ""
+
+#: src/queue.c:517
+#, c-format
+msgid "Posting article to %s..."
+msgstr ""
+
+#: src/queue.c:522
+msgid "NNTP post article"
+msgstr ""
+
+#: src/queue.c:528
+msgid "Article posted succesfully"
+msgstr ""
+
+#: src/queue.c:565
+msgid "Sending message via SMTP..."
+msgstr ""
+
+#: src/queue.c:571
+msgid "SMTP send message"
+msgstr ""
+
+#: src/queue.c:573
+msgid "SMTP connect"
+msgstr ""
+
+#: src/perl.c:130
+msgid "Not enough memory!"
+msgstr ""
+
+#: src/perl.c:136
+msgid "Error loading Perl"
+msgstr ""
+
+#: src/perl.c:226
+msgid "command"
+msgstr ""
+
+#: src/perl.c:236
+msgid "hook"
+msgstr ""
+
+#: src/perl.c:244
+msgid "file"
+msgstr ""
+
+#: src/smtp.c:32
+msgid "SMTP HELO failed"
+msgstr ""
+
+#: src/smtp.c:60
+msgid "mail server not ready"
+msgstr ""
+
+#: src/smtp.c:74
+msgid "SMTP QUIT failed"
+msgstr ""
+
+#: src/smtp.c:100
+msgid "message rejected by the server"
+msgstr ""
+
+#: src/smtp.c:140
+msgid "internal error"
+msgstr ""
+
+#: src/smtp.c:143 src/smtp.c:147
+msgid "can't send data to server"
+msgstr ""
+
+#: src/smtp.c:153
+msgid "message not sent"
+msgstr ""
+
+#: src/tcp.c:109
+msgid "Invalid input parameters"
+msgstr ""
+
+#: src/tcp.c:114
+msgid "tcp_open(): getservbyname() failed"
+msgstr ""
+
+#: src/tcp.c:128
+msgid "tcp_open(): gethostbyname() failed"
+msgstr ""
+
+#: src/tcp.c:136
+msgid "tcp_open(): socket() failed"
+msgstr ""
+
+#: src/tcp.c:142
+msgid "tcp_open(): connect() failed"
+msgstr ""
+
+#: src/tcp.c:149
+msgid "tcp_open(): setsockopt() failed"
+msgstr ""
+
+#: src/tcp.c:168
+msgid "Already closed"
+msgstr ""
+
+#: src/tcp.c:178 src/tcp.c:221 src/tcp.c:303
+msgid "Invalid descriptor"
+msgstr ""
+
+#: src/tcp.c:181 src/tcp.c:224
+msgid "Interrupted by user"
+msgstr ""
+
+#: src/tcp.c:183 src/tcp.c:234 src/tcp.c:322
+msgid "Undefined error"
+msgstr ""
+
+#: src/tcp.c:193 src/tcp.c:255 src/tcp.c:291
+msgid "The socket is closed"
+msgstr ""
+
+#: src/tcp.c:209
+msgid "select() timeout"
+msgstr ""
+
+#: src/tcp.c:228 src/tcp.c:313
+msgid "Invalid pointer"
+msgstr ""
+
+#: src/tcp.c:232 src/tcp.c:320
+msgid "I/O error"
+msgstr ""
+
+#: src/tcp.c:306
+msgid "Invalid pipe/socket"
+msgstr ""
+
+#: src/tcp.c:309
+msgid "File size limit exceeded"
+msgstr ""
+
+#: src/tcp.c:316
+msgid "No free space on FS"
+msgstr ""

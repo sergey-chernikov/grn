@@ -1,0 +1,12 @@
+$Id: TODO,v 1.4 2026/11/19 00:28:00 sc Exp $
+
+[ ] Use BONOBO as a viewing/editing engine (or, maybe as one of plugins?).
+[?] Implement viewing plugin for messagelist.
+[ ] Add libglade support for changing dialogs layout at run-time.
+[.] Add MIME support.
+[?] Add MIME-independent encodings for body and headers.
+[ ] Add folder support for newsgroups.
+[x] Add SMTP and mbox support.
+[?] Rewrite in C++
+[ ] Add lua support
+[ ] Don't parse HTML with regexps

@@ -1,0 +1,375 @@
+<HTML>
+  <HEAD>
+    <TITLE>Gnome ReadNews Perl Hooks</TITLE>
+  </HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+  <H1>Gnome ReadNews Perl Hooks</H1>
+<P>  
+  Several hooks can be called sequentally in order they were
+  <A HREF="Perl_functions.html#add_hook"><CODE>GRN::add_hook()</CODE></A>'ed.
+  You simply have to return 0 in all the hooks in the chain, except the last one.
+</P>
+<P>
+  Note, that field keys are case-sensitive. For example,
+  <CODE>$MSG{from}</CODE> will return a <CODE>NULL</CODE>, while
+  <CODE>$MSG{From}</CODE> will return the author of the message.
+</P>
+<P>
+  You can find some hook examples in samples/hooks/Perl directory.
+</P>
+  
+  <UL>Here is the list of described hooks:
+    <LI><A HREF="#GetScore">GetScore</A>
+    <LI><A HREF="#PreShow">PreShow</A>
+    <LI><A HREF="#PreShowHeader">PreShowHeader</A>
+    <LI><A HREF="#PreShowPart">PreShowPart</A>
+    <LI><A HREF="#PreShowFooter">PreShowFooter</A>
+    <LI><A HREF="#PrePost">PrePost</A>
+    <LI><A HREF="#PreSend">PreSend</A>
+    <LI><A HREF="#TemplateNew">TemplateNew</A>
+    <LI><A HREF="#TemplateMNew">TemplateMNew</A>
+    <LI><A HREF="#TemplateReply">TemplateReply</A>
+    <LI><A HREF="#TemplateMReply">TemplateMReply</A>
+    <LI><A HREF="#TemplateForward">TemplateForward</A>
+    <LI><A HREF="#TemplateMForward">TemplateMForward</A>
+  </UL>
+
+<HR>
+<P>
+  <H2><A NAME="GetScore">GetScore</A></H2>
+  <P>Returns article's score, based on standard NNTP headers.
+  <P><B>Accepts:</B> <CODE>%MSG</CODE> in global scope, the following fields
+  are passed:
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Group</TD>
+      <TD BGCOLOR="#EEEEEE">Newsgroup, where the article is in</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Number</TD>
+      <TD BGCOLOR="#EEEEEE">Article's number in the NNTP-server's spool</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Lines</TD>
+      <TD BGCOLOR="#EEEEEE">Number of lines in the article</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Size</TD>
+      <TD BGCOLOR="#EEEEEE">Size of the article, in bytes</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">ParsedDate</TD>
+      <TD BGCOLOR="#EEEEEE">Parsed date, in seconds since 1 Jan 1970 00:00:00</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Subject</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">From</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Date</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Message-ID</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">References</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Xref</TD>
+      <TD BGCOLOR="#EEEEEE">in the format: ("%s %s:%d", nntp_server, Group, Number)</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Path</TD>
+    </TR>
+  </TABLE>
+  <P><B>Returns:</B>
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">0</TD>
+      <TD BGCOLOR="#EEEEEE">Nothing changed, next handler will be called if any</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">1</TD>
+      <TD BGCOLOR="#EEEEEE">The message is marked by the blue ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">2</TD>
+      <TD BGCOLOR="#EEEEEE">green ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">3</TD>
+      <TD BGCOLOR="#EEEEEE">cyan ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">4</TD>
+      <TD BGCOLOR="#EEEEEE">red ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">5</TD>
+      <TD BGCOLOR="#EEEEEE">magenta ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">6</TD>
+      <TD BGCOLOR="#EEEEEE">brown ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">7</TD>
+      <TD BGCOLOR="#EEEEEE">grey ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">8</TD>
+      <TD BGCOLOR="#EEEEEE">undefined</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">9</TD>
+      <TD BGCOLOR="#EEEEEE">light blue ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">10</TD>
+      <TD BGCOLOR="#EEEEEE">light green ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">11</TD>
+      <TD BGCOLOR="#EEEEEE">light cyan ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">12</TD>
+      <TD BGCOLOR="#EEEEEE">light red ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">13</TD>
+      <TD BGCOLOR="#EEEEEE">light magenta ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">14</TD>
+      <TD BGCOLOR="#EEEEEE">yellow ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">15</TD>
+      <TD BGCOLOR="#EEEEEE">white ball</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">16</TD>
+      <TD BGCOLOR="#EEEEEE">undefined</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">17-98</TD>
+      <TD BGCOLOR="#EEEEEE">reserved</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">99</TD>
+      <TD BGCOLOR="#EEEEEE">Article not listed</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">100-65535</TD>
+      <TD BGCOLOR="#EEEEEE">Article's score</TD>
+    </TR>
+  </TABLE>
+<P>
+  <HR>
+
+<P>
+  <H2><A NAME="PreShow">PreShow</A></H2>
+  Converts message to HTML format. Can be used to colorify messages while
+  viewing, or to process message in any other way before showing.
+  <P><B>Accepts:</B> <CODE>%MSG</CODE> in global scope, the following fields
+  are passed:
+  <A NAME="PreShow_msg">
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Group</TD>
+      <TD BGCOLOR="#EEEEEE">Newsgroup, where the article is in</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Number</TD>
+      <TD BGCOLOR="#EEEEEE">Article's number in the NNTP-server's spool</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Lines</TD>
+      <TD BGCOLOR="#EEEEEE">Number of lines in the article</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Size</TD>
+      <TD BGCOLOR="#EEEEEE">Size of the article, in bytes</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">ParsedDate</TD>
+      <TD BGCOLOR="#EEEEEE">Parsed date, in seconds since 1 Jan 1970 00:00:00</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Subject</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">From</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Date</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Message-ID</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">References</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Xref</TD>
+      <TD BGCOLOR="#EEEEEE">in the format: ("%s %s:%d", nntp_server, Group, Number)</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">Path</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">body</TD>
+      <TD BGCOLOR="#EEEEEE">Message body</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">nChildren</TD>
+      <TD BGCOLOR="#EEEEEE">Number of underlying messages in the tree, where
+        the current message is the root</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">tagged</TD>
+    </TR>
+  </TABLE></A>
+  Also all additional headers (like <CODE>X-Comment-To</CODE>).
+  use "Message headers" window to view all of them.
+  <P><B>Returns:</B>
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">&lt;= 0</TD>
+      <TD BGCOLOR="#EEEEEE">on fail</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">&gt; 0</TD>
+      <TD BGCOLOR="#EEEEEE">on success</TD>
+    </TR>
+  </TABLE>
+  <P><B>Output:</B> On successfull return, Grn assumes that
+  <CODE>$MSG{body}</CODE> contains HTMLized message (see example in
+  <CODE>samples/hooks/Perl/PreShow.pl</CODE>). All chars have to be escaped
+  by the <A HREF="Perl_functions.html#html_escape"><CODE>GRN::html_escape()</CODE></A>
+  function. You can also change all the message headers.
+<P>
+  <HR>
+
+<P>
+  <H2><A NAME="PrePost">PrePost</A></H2>
+  Does the last-minute changes in the message, right before the posting.
+  <P><B>Accepts:</B> <CODE>%MSG</CODE> in global scope, all fields are described
+  <A HREF="#PreShow_msg">here</A>.
+  <P><B>Returns:</B>
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">&lt;= 0</TD>
+      <TD BGCOLOR="#EEEEEE">on fail</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">&gt; 0</TD>
+      <TD BGCOLOR="#EEEEEE">on success</TD>
+    </TR>
+  </TABLE>
+<P>
+  <HR>
+
+<P>
+  <H2><A NAME="PreSend">PreSend</A></H2>
+  Does the same thing as <A HREF="#PrePost">PrePost</A> but impacts only the
+  message sent via SMTP.
+  <P><B>Accepts:</B> <CODE>%MSG</CODE> in global scope, all fields are described
+  <A HREF="#PreShow_msg">here</A>.
+  <P><B>Returns:</B>
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">&lt;= 0</TD>
+      <TD BGCOLOR="#EEEEEE">on fail</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">&gt; 0</TD>
+      <TD BGCOLOR="#EEEEEE">on success</TD>
+    </TR>
+  </TABLE>
+<P>
+  <HR>
+
+<P>
+  <H2><A NAME="TemplateNew">TemplateNew</A></H2>
+  Generates template for new article.
+  <P><A NAME="TemplateNew_a"><B>Accepts:</B></A> <CODE>%MSG</CODE> in global
+  scope, all fields are described <A HREF="#PreShow_msg">here</A>. Some fields
+  may be empty.
+  <P><A NAME="TemplateNew_r"><B>Returns:</B></A>
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">&lt;= 0</TD>
+      <TD BGCOLOR="#EEEEEE">on fail</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC">&gt; 0</TD>
+      <TD BGCOLOR="#EEEEEE">on success</TD>
+    </TR>
+  </TABLE>
+  <P><A NAME="TemplateNew_o"><B>Output:</B></A>
+  <TABLE>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><CODE>$MSG{pos}</CODE></TD>
+      <TD BGCOLOR="#EEEEEE">Current cursor position</TD>
+    </TR>
+    <TR>
+      <TD BGCOLOR="#CCFFCC"><CODE>$MSG{body}</CODE></TD>
+      <TD BGCOLOR="#EEEEEE">Text to be inserted into the editor</TD>
+    </TR>
+  </TABLE>
+  You may also change or add any field in <CODE>%MSG</CODE>.
+<P>
+  <HR>
+
+<P>
+  <H2><A NAME="TemplateMNew">TemplateMNew</A></H2>
+  Generates template for new message to be sent via SMTP.
+  <P><B>Accepts:</B> See <A HREF="#TemplateNew_a">TemplateNew</A>.
+  <P><B>Returns:</B> See <A HREF="#TemplateNew_r">TemplateNew</A>.
+  <P><B>Output:</B> See <A HREF="#TemplateNew_o">TemplateNew</A>.
+<P>
+  <HR>
+
+<P>
+  <H2><A NAME="TemplateReply">TemplateReply</A></H2>
+  Generates template for newsgroup follow-up.
+  <P><A NAME="TemplateReply_a"><B>Accepts:</B></A> <CODE>%MSG</CODE> and
+  <CODE>%MSG1</CODE> in global scope, all fields are described
+  <A HREF="#PreShow_msg">here</A>. Some fields may be empty.
+  <CODE>%MSG1</CODE> is the original message you're replying to.
+  <P><B>Returns:</B> See <A HREF="#TemplateNew_r">TemplateNew</A>.
+  <P><B>Output:</B> See <A HREF="#TemplateNew_o">TemplateNew</A>.
+<P>
+  <HR>
+
+<P>
+  <H2><A NAME="TemplateMReply">TemplateMReply</A></H2>
+  Generates template for replying via mail.
+  <P><B>Accepts:</B>  See <A HREF="#TemplateReply_a">TemplateReply</A>.
+  <P><B>Returns:</B> See <A HREF="#TemplateNew_r">TemplateNew</A>.
+  <P><B>Output:</B> See <A HREF="#TemplateNew_o">TemplateNew</A>.
+<P>
+  <HR>
+
+<P>
+  <H2><A NAME="TemplateForward">TemplateForward</A></H2>
+  Generates template for forwarding.
+  <P><B>Accepts:</B>  See <A HREF="#TemplateReply_a">TemplateReply</A>.
+  <P><B>Returns:</B> See <A HREF="#TemplateNew_r">TemplateNew</A>.
+  <P><B>Output:</B> See <A HREF="#TemplateNew_o">TemplateNew</A>.
+<P>
+  <HR>
+
+<P>
+  <H2><A NAME="TemplateMForward">TemplateMForward</A></H2>
+  Generates template for forwarding via mail.
+  <P><B>Accepts:</B>  See <A HREF="#TemplateReply_a">TemplateReply</A>.
+  <P><B>Returns:</B> See <A HREF="#TemplateNew_r">TemplateNew</A>.
+  <P><B>Output:</B> See <A HREF="#TemplateNew_o">TemplateNew</A>.
+</BODY>
+</HTML>

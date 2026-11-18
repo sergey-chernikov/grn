@@ -1,0 +1,457 @@
+# Makefile.in generated automatically by automake 1.4 from Makefile.am
+
+# Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+
+SHELL = @SHELL@
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+
+DESTDIR =
+
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+
+top_builddir = .
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+transform = @program_transform_name@
+
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+host_alias = @host_alias@
+host_triplet = @host@
+AS = @AS@
+CC = @CC@
+DLLTOOL = @DLLTOOL@
+ISPELL = @ISPELL@
+LD = @LD@
+LIBTOOL = @LIBTOOL@
+LN_S = @LN_S@
+MAINT = @MAINT@
+MAKEINFO = @MAKEINFO@
+MUTT_MAJOR = @MUTT_MAJOR@
+MUTT_PATCHLEVEL = @MUTT_PATCHLEVEL@
+MUTT_REVISION = @MUTT_REVISION@
+MUTT_VERSION = @MUTT_VERSION@
+NM = @NM@
+OBJDUMP = @OBJDUMP@
+PACKAGE = @PACKAGE@
+RANLIB = @RANLIB@
+SENDMAIL = @SENDMAIL@
+VERSION = @VERSION@
+sharedir = @sharedir@
+
+EXTRA_DIST = configure muttconfig.h.in
+
+noinst_LIBRARIES = libmutt.a
+
+libmutt_a_SOURCES =  	attach.c 		buffy.c 		charset.c 		copy.c 			date.c 			dotlock.c		filter.c 		flags.c 		from.c 			getdomain.c		globals.c 		handler.c 		hash.c 			imap.c 			init.c 			lib.c 			mbox.c			mh.c 			mx.c 			parse.c 		pattern.c 		pop.c 			rfc1524.c 		rfc2047.c 		rfc822.c 		score.c 		sendlib.c 		signal.c 		socket.c		sort.c 			system.c 		thread.c		acconfig.h		attach.h		buffy.h			charset.h 		copy.h			dotlock.h		functions.h		globals.h		hash.h			history.h		imap.h			init.h			keymap.h		mailbox.h		mapping.h		mime.h			mutt.h			mutt_curses.h		mutt_menu.h		mutt_regex.h		mutt_socket.h		mx.h			pager.h			parse.h			protos.h		rfc1524.h		rfc2047.h		rfc822.h		sort.h			thread_msgs.h
+
+
+#CPPFLAGS=-DSHAREDIR=\"$(sharedir)\" -DLIBMUTT -DVERSION=\"$(VERSION)\"
+CPPFLAGS = -DSHAREDIR=\"$(sharedir)\" -DSYSCONFDIR=\"$(sysconfdir)\" -DLIBMUTT
+INCLUDES = -I.
+ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+mkinstalldirs = $(SHELL) $(top_srcdir)/../mkinstalldirs
+CONFIG_HEADER = muttconfig.h
+CONFIG_CLEAN_FILES = 
+LIBRARIES =  $(noinst_LIBRARIES)
+
+
+DEFS = @DEFS@ -I. -I$(srcdir) -I.
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+libmutt_a_LIBADD = 
+libmutt_a_OBJECTS =  attach.o buffy.o charset.o copy.o date.o dotlock.o \
+filter.o flags.o from.o getdomain.o globals.o handler.o hash.o imap.o \
+init.o lib.o mbox.o mh.o mx.o parse.o pattern.o pop.o rfc1524.o \
+rfc2047.o rfc822.o score.o sendlib.o signal.o socket.o sort.o system.o \
+thread.o
+AR = ar
+CFLAGS = @CFLAGS@
+COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+DIST_COMMON =  README ./stamp-h.in AUTHORS COPYING ChangeLog INSTALL \
+Makefile.am Makefile.in NEWS acconfig.h aclocal.m4 configure \
+configure.in muttconfig.h.in
+
+
+DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
+
+TAR = gtar
+GZIP_ENV = --best
+SOURCES = $(libmutt_a_SOURCES)
+OBJECTS = $(libmutt_a_OBJECTS)
+
+all: all-redirect
+.SUFFIXES:
+.SUFFIXES: .S .c .lo .o .s
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps Makefile
+
+Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) \
+	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
+$(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ configure.in 
+	cd $(srcdir) && $(ACLOCAL)
+
+config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+	$(SHELL) ./config.status --recheck
+$(srcdir)/configure: @MAINTAINER_MODE_TRUE@$(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+	cd $(srcdir) && $(AUTOCONF)
+
+muttconfig.h: stamp-h
+	@if test ! -f $@; then \
+		rm -f stamp-h; \
+		$(MAKE) stamp-h; \
+	else :; fi
+stamp-h: $(srcdir)/muttconfig.h.in $(top_builddir)/config.status
+	cd $(top_builddir) \
+	  && CONFIG_FILES= CONFIG_HEADERS=muttconfig.h \
+	     $(SHELL) ./config.status
+	@echo timestamp > stamp-h 2> /dev/null
+$(srcdir)/muttconfig.h.in: @MAINTAINER_MODE_TRUE@$(srcdir)/stamp-h.in
+	@if test ! -f $@; then \
+		rm -f $(srcdir)/stamp-h.in; \
+		$(MAKE) $(srcdir)/stamp-h.in; \
+	else :; fi
+$(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) acconfig.h
+	cd $(top_srcdir) && $(AUTOHEADER)
+	@echo timestamp > $(srcdir)/stamp-h.in 2> /dev/null
+
+mostlyclean-hdr:
+
+clean-hdr:
+
+distclean-hdr:
+	-rm -f muttconfig.h
+
+maintainer-clean-hdr:
+
+mostlyclean-noinstLIBRARIES:
+
+clean-noinstLIBRARIES:
+	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+
+distclean-noinstLIBRARIES:
+
+maintainer-clean-noinstLIBRARIES:
+
+.c.o:
+	$(COMPILE) -c $<
+
+.s.o:
+	$(COMPILE) -c $<
+
+.S.o:
+	$(COMPILE) -c $<
+
+mostlyclean-compile:
+	-rm -f *.o core *.core
+
+clean-compile:
+
+distclean-compile:
+	-rm -f *.tab.c
+
+maintainer-clean-compile:
+
+.c.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+
+.s.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+
+.S.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+
+maintainer-clean-libtool:
+
+libmutt.a: $(libmutt_a_OBJECTS) $(libmutt_a_DEPENDENCIES)
+	-rm -f libmutt.a
+	$(AR) cru libmutt.a $(libmutt_a_OBJECTS) $(libmutt_a_LIBADD)
+	$(RANLIB) libmutt.a
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP)
+	list='$(SOURCES) $(HEADERS)'; \
+	unique=`for i in $$list; do echo $$i; done | \
+	  awk '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	here=`pwd` && cd $(srcdir) \
+	  && mkid -f$$here/ID $$unique $(LISP)
+
+TAGS:  $(HEADERS) $(SOURCES) muttconfig.h.in $(TAGS_DEPENDENCIES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SOURCES) $(HEADERS)'; \
+	unique=`for i in $$list; do echo $$i; done | \
+	  awk '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)muttconfig.h.in$$unique$(LISP)$$tags" \
+	  || (cd $(srcdir) && etags $(ETAGS_ARGS) $$tags muttconfig.h.in $$unique $(LISP) -o $$here/TAGS)
+
+mostlyclean-tags:
+
+clean-tags:
+
+distclean-tags:
+	-rm -f TAGS ID
+
+maintainer-clean-tags:
+
+distdir = $(PACKAGE)-$(VERSION)
+top_distdir = $(distdir)
+
+# This target untars the dist file and tries a VPATH configuration.  Then
+# it guarantees that the distribution is self-contained by making another
+# tarfile.
+distcheck: dist
+	-rm -rf $(distdir)
+	GZIP=$(GZIP_ENV) $(TAR) zxf $(distdir).tar.gz
+	mkdir $(distdir)/=build
+	mkdir $(distdir)/=inst
+	dc_install_base=`cd $(distdir)/=inst && pwd`; \
+	cd $(distdir)/=build \
+	  && ../configure --srcdir=.. --prefix=$$dc_install_base \
+	  && $(MAKE) $(AM_MAKEFLAGS) \
+	  && $(MAKE) $(AM_MAKEFLAGS) dvi \
+	  && $(MAKE) $(AM_MAKEFLAGS) check \
+	  && $(MAKE) $(AM_MAKEFLAGS) install \
+	  && $(MAKE) $(AM_MAKEFLAGS) installcheck \
+	  && $(MAKE) $(AM_MAKEFLAGS) dist
+	-rm -rf $(distdir)
+	@banner="$(distdir).tar.gz is ready for distribution"; \
+	dashes=`echo "$$banner" | sed s/./=/g`; \
+	echo "$$dashes"; \
+	echo "$$banner"; \
+	echo "$$dashes"
+dist: distdir
+	-chmod -R a+r $(distdir)
+	GZIP=$(GZIP_ENV) $(TAR) chozf $(distdir).tar.gz $(distdir)
+	-rm -rf $(distdir)
+dist-all: distdir
+	-chmod -R a+r $(distdir)
+	GZIP=$(GZIP_ENV) $(TAR) chozf $(distdir).tar.gz $(distdir)
+	-rm -rf $(distdir)
+distdir: $(DISTFILES)
+	-rm -rf $(distdir)
+	mkdir $(distdir)
+	-chmod 777 $(distdir)
+	@for file in $(DISTFILES); do \
+	  d=$(srcdir); \
+	  if test -d $$d/$$file; then \
+	    cp -pr $$/$$file $(distdir)/$$file; \
+	  else \
+	    test -f $(distdir)/$$file \
+	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
+	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+	  fi; \
+	done
+attach.o: attach.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mutt_menu.h keymap.h mutt_curses.h rfc1524.h \
+	mime.h pager.h mailbox.h copy.h mx.h
+buffy.o: buffy.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h buffy.h mailbox.h mx.h imap.h
+charset.o: charset.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h charset.h
+copy.o: copy.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h mailbox.h mx.h copy.h rfc2047.h parse.h mime.h
+date.o: date.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h
+dotlock.o: dotlock.c muttconfig.h dotlock.h mutt.h rfc822.h hash.h \
+	mutt_regex.h protos.h globals.h mx.h mailbox.h
+filter.o: filter.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h
+flags.o: flags.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mutt_curses.h sort.h mx.h mailbox.h
+from.o: from.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h
+getdomain.o: getdomain.c mutt.h muttconfig.h rfc822.h hash.h \
+	mutt_regex.h protos.h globals.h
+globals.o: globals.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mx.h mailbox.h buffy.h sort.h mutt_curses.h \
+	keymap.h
+handler.o: handler.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mutt_curses.h rfc1524.h keymap.h mime.h \
+	copy.h charset.h
+hash.o: hash.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h
+imap.o: imap.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h mutt_curses.h mx.h mailbox.h mutt_socket.h sort.h
+init.o: init.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h mapping.h mutt_curses.h history.h keymap.h mx.h \
+	mailbox.h init.h sort.h buffy.h
+lib.o: lib.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h mutt_curses.h mime.h mailbox.h mx.h
+mbox.o: mbox.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h mailbox.h mx.h sort.h copy.h
+mh.o: mh.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h mailbox.h mx.h copy.h buffy.h sort.h
+mx.o: mx.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h mx.h mailbox.h rfc2047.h sort.h copy.h keymap.h \
+	imap.h
+parse.o: parse.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mailbox.h mime.h rfc2047.h
+pattern.o: pattern.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mapping.h keymap.h mailbox.h copy.h
+pop.o: pop.c ../config.h mutt.h muttconfig.h rfc822.h hash.h \
+	mutt_regex.h protos.h globals.h mailbox.h mx.h thread_msgs.h
+rfc1524.o: rfc1524.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h rfc1524.h
+rfc2047.o: rfc2047.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mime.h charset.h rfc2047.h
+rfc822.o: rfc822.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h
+score.o: score.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h sort.h
+sendlib.o: sendlib.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mutt_curses.h rfc2047.h mx.h mailbox.h \
+	mime.h copy.h pager.h charset.h
+signal.o: signal.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mutt_curses.h
+socket.o: socket.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h mutt_socket.h
+sort.o: sort.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h protos.h \
+	globals.h sort.h
+system.o: system.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h
+thread.o: thread.c mutt.h muttconfig.h rfc822.h hash.h mutt_regex.h \
+	protos.h globals.h sort.h
+
+info-am:
+info: info-am
+dvi-am:
+dvi: dvi-am
+check-am: all-am
+check: check-am
+installcheck-am:
+installcheck: installcheck-am
+all-recursive-am: muttconfig.h
+	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+
+install-exec-am:
+install-exec: install-exec-am
+
+install-data-am:
+install-data: install-data-am
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+install: install-am
+uninstall-am:
+uninstall: uninstall-am
+all-am: Makefile $(LIBRARIES) muttconfig.h
+all-redirect: all-am
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+installdirs:
+
+
+mostlyclean-generic:
+
+clean-generic:
+
+distclean-generic:
+	-rm -f Makefile $(CONFIG_CLEAN_FILES)
+	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+
+maintainer-clean-generic:
+mostlyclean-am:  mostlyclean-hdr mostlyclean-noinstLIBRARIES \
+		mostlyclean-compile mostlyclean-libtool \
+		mostlyclean-tags mostlyclean-generic
+
+mostlyclean: mostlyclean-am
+
+clean-am:  clean-hdr clean-noinstLIBRARIES clean-compile clean-libtool \
+		clean-tags clean-generic mostlyclean-am
+
+clean: clean-am
+
+distclean-am:  distclean-hdr distclean-noinstLIBRARIES distclean-compile \
+		distclean-libtool distclean-tags distclean-generic \
+		clean-am
+	-rm -f libtool
+
+distclean: distclean-am
+	-rm -f config.status
+
+maintainer-clean-am:  maintainer-clean-hdr \
+		maintainer-clean-noinstLIBRARIES \
+		maintainer-clean-compile maintainer-clean-libtool \
+		maintainer-clean-tags maintainer-clean-generic \
+		distclean-am
+	@echo "This command is intended for maintainers to use;"
+	@echo "it deletes files that may require special tools to rebuild."
+
+maintainer-clean: maintainer-clean-am
+	-rm -f config.status
+
+.PHONY: mostlyclean-hdr distclean-hdr clean-hdr maintainer-clean-hdr \
+mostlyclean-noinstLIBRARIES distclean-noinstLIBRARIES \
+clean-noinstLIBRARIES maintainer-clean-noinstLIBRARIES \
+mostlyclean-compile distclean-compile clean-compile \
+maintainer-clean-compile mostlyclean-libtool distclean-libtool \
+clean-libtool maintainer-clean-libtool tags mostlyclean-tags \
+distclean-tags clean-tags maintainer-clean-tags distdir info-am info \
+dvi-am dvi check check-am installcheck-am installcheck all-recursive-am \
+install-exec-am install-exec install-data-am install-data install-am \
+install uninstall-am uninstall all-redirect all-am all installdirs \
+mostlyclean-generic distclean-generic clean-generic \
+maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+
+
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

@@ -1,0 +1,291 @@
+$Id: ChangeLog,v 1.30 2000/06/28 11:28:25 sc Exp $
+
+
+2000-08-17  sc
+	* src/nntp.c: Authentication implemented.
+	* src/nntp.c: Added support for moderated groups.
+	* src/grn_config.[ch], src/grn_prefs.c: added support for NNTP
+	  authentication (login and password fields).
+	* src/grn_prefs.c: New "Identity" page.
+
+2000-06-28  sc
+	* src/grn_attach.[ch]: Implemetation of "Attachments" dialog added.
+	* src/grn_mime.c: Viewing and opening of MIME part doesn't block the
+	  whole application now.
+
+2000-06-27  sc
+	* src/grn_mime.c: "Open" and "View" commands implemented in the "MIME
+	  structure" dialog. They both use GNOME MIME-types configuration.
+
+2000-06-24  sc
+	* src/grn_perl.c: Added GRN::error_dialog() function.
+	* samples/commands/Perl/AddressBook.pl: Address book command is ready
+	  to use now.
+
+2000-06-23  sc
+	* src/grn_perl.c: Added some GRN::entry_*() functions.
+
+2000-06-20  sc
+	* src/grn_perl.h, src/perl.c: Added Perl commands capability. The
+	  signature of add_command() function has changed.
+	* samples/commands/Perl: added an example. Read all the comments in it
+	  carefully.
+	* src/perl.c: added some text-manipulationg functions, GRN::mew_*().
+	* src/grn_menu.[ch]: Added functions that generate a list of commands,
+	  depending on their context.
+	* src/grn.c, src/grn_msgpost.c, src/grn_msgsend.c: added calls to the
+	  previously described functions in src/grn_menu.c.
+
+2000-06-16  sc
+	* src/grn_mime.c: Saving of MIME parts implemented.
+
+2000-06-13  sc
+	* src/grn_mime.[ch], src/grn_menu.c: Message/View/MIME implemented
+	  initially.
+
+2000-06-05  sc
+	* src/grn_mime.[ch]: added support for MIME parsing and decoding.
+	* src/grn_msgwin.c: same.
+	* src/perl.c, src/grn_msgwin.c: added 3 new hooks: PreShowHeader,
+	  PreShowFooter and PreShowPart.
+	* samples/hooks/Perl/PreShow.pl: updated.
+	* src/grn_msgview.c: fixed a crash if <p> is empty.
+	* src/grn_util.c: fixed one more header parsing bug.
+	* src/nntp.c: \t and \n in headers are now recoginzed.
+
+2000-06-01  sc
+	* src/grn_threadlist.c: memory leak eliminated.
+	* src/grn_mime.[ch]: MIME support is in progress.
+	* src/grn_misc.c: added support for MIME to t_message.
+	* src/nntp.c: fixed a serious header parsing bug.
+
+2000-05-19  sc
+	* src/grn.c: added a couple of gnome_window_icon_*() calls from
+	  gnome-libs-1.0.60+ (so, you have to have them installed to compile
+	  Grn).
+	* src/nntp.c: article downloading speedup. Doing str_add() for every
+	  article's body line was a *VERY* bad idea.
+	* src/perl.c: added 2 more functions: GRN::get_font_pal() and
+	  GRN::get_color_pal().
+
+2000-05-15  sc
+	* src/grn_config.h, src/grn_prefs.c: added one more confirmation.
+
+2000-05-13  sc
+	* src/grn_config.c: added default initialization for user's email as
+	  "username@host.fqdn".
+
+2000-05-12  sc
+	* src/grn_find.[ch]: searching is fully implemented.
+	* src/grn_util.[ch]: added some helper functions.
+	* src/grn_threadlist.[ch]: same.
+	* src/nntp.c: fixed a small memory leak.
+	* src/tcp.c: same.
+
+2000-05-05  sc
+	* doc/help/*: help support added. Volunteers for help writing are
+	  welcome.
+
+2000-05-02  sc
+	* grn_find.[ch]: added. Work on search capability initiated.
+
+2000-04-29  sc
+	*: Easter snapshot.
+	* src/grn_msgview.c: added support for <FORM> tag (see doc/html.txt for
+	  more info).
+	* src/grn_msgwin.c: you can now change headers in "PreShow" hook.
+
+2000-04-28  sc
+	* src/grn_util.c: fixed date calculation bug in parse_date().
+	* src/grn_config.[ch]: added paths[] field to preferences.
+	* src/grn.c: support for "--config" added.
+	* src/grn_prefs.c: "Paths" tab added.
+	* src/grn_util.c: grn_subst_tilde() added.
+	* po/ru.po: updated.
+	* src/grn.c, src/perl.c: eliminated some tiny memory leaks.
+
+2000-04-27  sc
+	* src/grn.c: creation of ~/.grn/commands/ added.
+	* src/perl.c: autoload commands from ~/.grn/commands/Perl.
+	* src/grn_msgpost.c: "Load file" dialog in composer window implemented.
+
+2000-04-26  sc
+	*: version 0.0.18 announced at www.gnome.org
+	* src/grn_misc.[ch]: added some headers manipulating functions.
+	* src/grn_mhdrwin.c: "message headers edit" dialog fully implemented.
+	* src/grn_msgpost.c: disable multiple instances of "message headers
+	  edit" dialog.
+	* src/nntp.c: change "keepalive" command to NNTP-server from "HELP" to
+	  "MODE READER" (less useless traffic).
+
+2000-04-25  sc
+	* libmutt/*, configure.in, Makefile.am: added libmutt (borrowed from
+	  Balsa 0.8.0).
+	* src/grn_mime.[ch]: added.
+	* src/grn_mime.[ch]: added grn_decode_headers().
+	* src/nntp.c: implemented message headers decoding.
+
+2000-04-20  sc
+	* src/grn_msgsend.[ch]: all SMTP-related menu items are implemented.
+	* src/perl.c: added new Perl hook: PreSend.
+	* src/perl.c: added new Perl hook: TemplateMNew.
+	* samples/hooks/Perl: updated some scripts.
+
+2000-04-17  sc
+	* src/grn_nglist: check for (clist->selection != NULL) in
+	  grouplist_recalc_unread().
+
+2000-04-12  sc
+	*: version 0.0.16 announced at www.gnome.org
+	* src/smtp.[ch]: implemented almost all smtp_* functions.
+	* src/grn_msgsend.[ch]: added.
+	* po/ru.po: some typos corrected.
+
+2000-04-11  sc
+	* src/tcp.[ch]: added. Socket handling reworked a bit.
+	* src/nntp.c: removed tcp_* functions.
+
+2000-04-10  sc
+	* src/grn_util.[ch], src/queue.c: better error reporting (via message
+	  dialog instead of stderr).
+	* src/grn_config.[ch], src/grn_prefs.c: added "SMTP Server" field.
+	* src/smtp.[ch]: added.
+
+2000-04-07  sc
+	* src/grn_msgpost.c: newsgroups selection dialog behavior corrected.
+	* src/grn_threadlist.c: "mark thread read" behavior changed.
+
+2000-04-06  sc
+	* src/grn_menu.[ch], src/grn_msgpost.c: added menu for the "Post
+	  message" window.
+	* src/grn_msgwin.c: fixed a bug in get_cur_msg(). Now extra headers
+	  won't be duplicated in forwarded message.
+	* src/grn_mhdrwin.c: Message headers window can now be scrolled by
+	  keyboard.
+
+2000-04-05  sc
+	* src/queue.c: added some optimization for GRNQ_*_RECALC queue tasks.
+	* src/grn_threadlist.c: some fixes for visibility of the list selector.
+
+2000-03-28  sc
+	* src/grn.c: NNTP-autoconnection code moved again to the queue.
+	* src/grn_config.c: changed default for srv_autoconnect to FALSE.
+	* src/grn_threadlist.c: some message threading bugs fixed.
+
+2000-03-27  sc
+	* src/grn_msgpost.c: adding MIME headers if body is 8bit.
+	* src/grn_util.[ch]: new function: get_charset().
+
+2000-03-24  sc
+	*: version 0.0.14 announced at www.gnome.org
+	* src/queue.[ch]: added grnq_*_threadlist_recalc() functions.
+	* src/grn_threadlist.c: threadlist status recalculation moved to
+	  the queue.
+	* po/ru.po: updated Russian translation.
+
+2000-03-23  sc
+	* src/grn_misc.c: fixed some memory leaks in *list_free().
+
+2000-03-22  sc
+	* src/grn_msgpost.c: added some GNKSA validity checks.
+	* src/grn_msgpost.c: implemented "Followup-to" and "Forward to group".
+	* src/grn_config.h, src/grn_prefs.c: added new confirmation - "Show
+	  warnings".
+	* samples/hooks/Perl/templates.pl: added template_reply and
+	  template_forward hooks.
+
+2000-03-21  sc
+	* include/grn_types.h, src/grn_msgpost.c, src/perl.c, src/grn_misc.[ch]:
+	  removed t_tmpl_data struct and all its methods.
+
+2000-03-14  sc
+	* src/perlxsi.c, src/mk_perlxsi: added xs_init() implementation for
+	  perl_parse().
+
+2000-02-18  sc
+	* src/grn_config.[ch]: changed window state recalling. Keys for windows
+	  state storing changed. Position now also recalled. [Geometry] section
+	  in ~/.gnome/GRN is obsoleted.
+
+2000-02-17  sc
+	* src/grn_msgpost.c, src/grn_nglist.[ch]: groups selection dialog
+	  implemented.
+
+2000-02-15  sc
+	* src/grn_util.c: added grn_subst_vars().
+	* src/grn_msgpost.c: added support for variable substitution.
+	* doc/inline_vars.txt: description for inline variables.
+	* src/grn_config.[ch], src/grn_prefs.c: added "User-Agent" field.
+	* src/grn_msgview.c: fixed a bug with default (but coloured) font.
+	* src/perl.c: added GRN::subst_vars() function.
+	* src/grn_msgpost.c: added PrePost Perl hook.
+
+2000-02-11  sc
+	* src/grn_nglist.c: added Tab completion for "Find newsgroup" entry.
+	* src/grn_msgpost.c: added TemplateNew Perl hook.
+
+2000-02-10  sc
+	*: version 0.0.12 released and announced at www.gnome.org.
+	* src/nntp.c: (from Pan-0.7.4) don't crash on SIGPIPE.
+	* src/grn_threadlist.c, src/grn_nglist.c: code cleanup.
+	* src/grn_nglist.c: "Previous unread group" and "Next unread group"
+	  commands added.
+	* src/grn_threadlist.c: horizontal scrolling now respects "smooth
+	  scrolling" option.
+
+2000-02-07  sc
+	* src/grn_msgwin.c: added smooth scrolling feature.
+	* src/grn_config.[ch], src/grn_prefs.c: added "smooth scrolling"
+	  configuration option (off by default).
+
+2000-01-31  sc
+	* src/grn_prefs.c: added Color palette.
+	* src/commands.c: "Scripts/Perl/Load..." menu implemented.
+
+2000-01-29  sc
+	* src/grn_msgpost.[ch]: posting ability added.
+
+2000-01-27  sc
+	* src/grn_prefs.c: implemented font palette.
+	* src/grn_config.[ch]: added support for font and color palettes.
+
+2000-01-26  sc
+	* src/grn_msgview.c: added support for <FONT Name=> and
+	  <FONT FontIndex=>. Some code cleanups.
+	  Added font_props type and font_props_* functions.
+
+2000-01-25  sc
+	* samples/hooks/Perl/PreShow.pl: added hook for highlighting.
+	* src/xtext.[ch]: removed temporarily.
+
+2000-01-19  sc
+	* src/grn_config.[ch]: keys in ~/.gnome/GRN for cfms[] changed. Added
+	  2 more confirmations.
+	* src/nntp.[ch]: a little code cleanup. Added nntp_post_article().
+	* src/queue.[ch]: added *_post_article().
+	* src/perl.c: "Scripts/Perl/Restart all" menu implemented.
+
+2000-01-18  sc
+	* src/perl.c: Added GRN::get_config() function.
+	* src/grn_prefs.c, src/grn_config.[ch]: Added name, email, replyto and
+	  org fields to grn_prefs.
+
+2000-01-14  sc
+	* src/perl.c, src/msgwin.[ch]: Added GRN::html_escape() function and
+	  "PreShow" hook.
+	* configure.in, src/xtext.[ch]: (experimental) added "--enable-xtext"
+	  to use Xtext from X-Chat instead of standard GtkText in msgwin.[ch].
+
+2000-01-12  sc
+	* src/msgview.[ch], src/msgwin.[ch]: Changed internal data format from
+	  XML to HTML.
+
+2000-01-11  sc
+	* src/grn_news.[ch]: Incorrect "nunread" calculation - fixed.
+
+1999-12-30  sc
+	*: 0.0.10 released and announced at www.gnome.org.
+
+1999-11-10  sc
+	*: Started from scartch - version 0.0.7. Everything redesigned.
+	   GNU autoconf, automake and gettext support added.

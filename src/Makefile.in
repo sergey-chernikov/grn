@@ -1,0 +1,446 @@
+# Makefile.in generated automatically by automake 1.4 from Makefile.am
+
+# Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# $Id: Makefile.am,v 1.19 2000/06/28 11:28:28 sc Exp $
+
+
+SHELL = @SHELL@
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+
+DESTDIR =
+
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+
+top_builddir = ..
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+transform = @program_transform_name@
+
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+CATALOGS = @CATALOGS@
+CATOBJEXT = @CATOBJEXT@
+CC = @CC@
+DATADIRNAME = @DATADIRNAME@
+GENCAT = @GENCAT@
+GMOFILES = @GMOFILES@
+GMSGFMT = @GMSGFMT@
+GTK_CFLAGS = @GTK_CFLAGS@
+GTK_CONFIG = @GTK_CONFIG@
+GTK_LIBS = @GTK_LIBS@
+GT_NO = @GT_NO@
+GT_YES = @GT_YES@
+INCLUDE_LOCALE_H = @INCLUDE_LOCALE_H@
+INSTOBJEXT = @INSTOBJEXT@
+INTLDEPS = @INTLDEPS@
+INTLLIBS = @INTLLIBS@
+INTLOBJS = @INTLOBJS@
+MAKEINFO = @MAKEINFO@
+MKINSTALLDIRS = @MKINSTALLDIRS@
+MSGFMT = @MSGFMT@
+PACKAGE = @PACKAGE@
+POFILES = @POFILES@
+POSUB = @POSUB@
+RANLIB = @RANLIB@
+TEXT_CFLAGS = @TEXT_CFLAGS@
+TEXT_LIBS = @TEXT_LIBS@
+USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIBINTL@
+USE_NLS = @USE_NLS@
+VERSION = @VERSION@
+glibpath = @glibpath@
+gmakepath = @gmakepath@
+gnomepath = @gnomepath@
+imlibpath = @imlibpath@
+l = @l@
+perlpath = @perlpath@
+sedpath = @sedpath@
+unamepath = @unamepath@
+
+EXTRA_DIST = grn_tl_compare_funcs.c mk_perlxsi
+
+INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-DLOCALEDIR=\"$(datadir)/locale\" 	-I$(includedir) -DG_LOG_DOMAIN=\"GRN\" 	$(GNOME_INCLUDEDIR) -I. -I.. -I${top_srcdir}/include 	-I${top_srcdir}/libmutt
+
+
+bin_PROGRAMS = grn
+
+grn_SOURCES = grn.c grn_about.c grn_attach.c grn_commands.c grn_config.c 	grn_find.c grn_menu.c grn_mhdrwin.c grn_mime.c grn_misc.c 	grn_msgpost.c grn_msgsend.c grn_msgview.c grn_msgwin.c grn_news.c 	grn_nglist.c grn_prefs.c grn_threadlist.c grn_util.c nntp.c perl.c 	perlxsi.c queue.c smtp.c tcp.c xml-io.c
+
+
+grn_LDADD = ../libmutt/libmutt.a $(INTLLIBS) -lm
+
+noinst_HEADERS = grn_attach.h grn_commands.h grn_config.h grn_find.h 	grn_menu.h grn_mime.h grn_misc.h grn_mhdrwin.h grn_msgpost.h 	grn_msgsend.h grn_msgview.h grn_msgwin.h grn_news.h grn_nglist.h 	grn_perl.h grn_pixmaps.h grn_prefs.h grn_threadlist.h grn_util.h 	nntp.h queue.h smtp.h tcp.h xml-io.h
+
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+CONFIG_HEADER = ../config.h
+CONFIG_CLEAN_FILES = 
+PROGRAMS =  $(bin_PROGRAMS)
+
+
+DEFS = @DEFS@ -I. -I$(srcdir) -I..
+CPPFLAGS = @CPPFLAGS@
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+grn_OBJECTS =  grn.o grn_about.o grn_attach.o grn_commands.o \
+grn_config.o grn_find.o grn_menu.o grn_mhdrwin.o grn_mime.o grn_misc.o \
+grn_msgpost.o grn_msgsend.o grn_msgview.o grn_msgwin.o grn_news.o \
+grn_nglist.o grn_prefs.o grn_threadlist.o grn_util.o nntp.o perl.o \
+perlxsi.o queue.o smtp.o tcp.o xml-io.o
+grn_DEPENDENCIES =  ../libmutt/libmutt.a
+grn_LDFLAGS = 
+CFLAGS = @CFLAGS@
+COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+HEADERS =  $(noinst_HEADERS)
+
+DIST_COMMON =  Makefile.am Makefile.in
+
+
+DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
+
+TAR = tar
+GZIP_ENV = --best
+SOURCES = $(grn_SOURCES)
+OBJECTS = $(grn_OBJECTS)
+
+all: all-redirect
+.SUFFIXES:
+.SUFFIXES: .S .c .o .s
+$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps src/Makefile
+
+Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) \
+	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
+
+mostlyclean-binPROGRAMS:
+
+clean-binPROGRAMS:
+	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+
+distclean-binPROGRAMS:
+
+maintainer-clean-binPROGRAMS:
+
+install-binPROGRAMS: $(bin_PROGRAMS)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(bindir)
+	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  if test -f $$p; then \
+	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
+	     $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+	  else :; fi; \
+	done
+
+uninstall-binPROGRAMS:
+	@$(NORMAL_UNINSTALL)
+	list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+	done
+
+.c.o:
+	$(COMPILE) -c $<
+
+.s.o:
+	$(COMPILE) -c $<
+
+.S.o:
+	$(COMPILE) -c $<
+
+mostlyclean-compile:
+	-rm -f *.o core *.core
+
+clean-compile:
+
+distclean-compile:
+	-rm -f *.tab.c
+
+maintainer-clean-compile:
+
+grn: $(grn_OBJECTS) $(grn_DEPENDENCIES)
+	@rm -f grn
+	$(LINK) $(grn_LDFLAGS) $(grn_OBJECTS) $(grn_LDADD) $(LIBS)
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP)
+	list='$(SOURCES) $(HEADERS)'; \
+	unique=`for i in $$list; do echo $$i; done | \
+	  awk '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	here=`pwd` && cd $(srcdir) \
+	  && mkid -f$$here/ID $$unique $(LISP)
+
+TAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SOURCES) $(HEADERS)'; \
+	unique=`for i in $$list; do echo $$i; done | \
+	  awk '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || (cd $(srcdir) && etags $(ETAGS_ARGS) $$tags  $$unique $(LISP) -o $$here/TAGS)
+
+mostlyclean-tags:
+
+clean-tags:
+
+distclean-tags:
+	-rm -f TAGS ID
+
+maintainer-clean-tags:
+
+distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+
+subdir = src
+
+distdir: $(DISTFILES)
+	@for file in $(DISTFILES); do \
+	  d=$(srcdir); \
+	  if test -d $$d/$$file; then \
+	    cp -pr $$/$$file $(distdir)/$$file; \
+	  else \
+	    test -f $(distdir)/$$file \
+	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
+	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+	  fi; \
+	done
+grn.o: grn.c ../include/grn_consts.h ../config.h grn_util.h \
+	../include/grn_types.h grn_misc.h grn_commands.h grn_menu.h \
+	grn_config.h grn_find.h queue.h nntp.h grn_nglist.h tcp.h \
+	grn_mime.h ../libmutt/mutt.h ../libmutt/muttconfig.h \
+	../libmutt/rfc822.h ../libmutt/hash.h ../libmutt/mutt_regex.h \
+	../libmutt/protos.h ../libmutt/globals.h grn_perl.h \
+	grn_pixmaps.h ../pixmaps/grn-mini.xpm ../pixmaps/ball.xpm \
+	../pixmaps/ball-blue.xpm ../pixmaps/ball-green.xpm \
+	../pixmaps/ball-cyan.xpm ../pixmaps/ball-red.xpm \
+	../pixmaps/ball-magenta.xpm ../pixmaps/ball-brown.xpm \
+	../pixmaps/ball-grey.xpm ../pixmaps/ball-ltblue.xpm \
+	../pixmaps/ball-ltgreen.xpm ../pixmaps/ball-ltcyan.xpm \
+	../pixmaps/ball-ltred.xpm ../pixmaps/ball-ltmagenta.xpm \
+	../pixmaps/ball-yellow.xpm ../pixmaps/ball-white.xpm \
+	../pixmaps/mball.xpm ../pixmaps/mball-green.xpm
+grn_about.o: grn_about.c ../include/grn_consts.h ../config.h grn_util.h \
+	../include/grn_types.h
+grn_attach.o: grn_attach.c ../include/grn_consts.h ../config.h \
+	../libmutt/mutt.h ../libmutt/muttconfig.h ../libmutt/rfc822.h \
+	../libmutt/hash.h ../libmutt/mutt_regex.h ../libmutt/protos.h \
+	../libmutt/globals.h ../libmutt/mime.h ../include/grn_types.h \
+	grn_attach.h grn_mime.h grn_util.h grn_config.h grn_find.h
+grn_commands.o: grn_commands.c ../include/grn_consts.h ../config.h \
+	grn_commands.h ../include/grn_vars.h ../include/grn_types.h \
+	grn_config.h grn_find.h grn_menu.h grn_news.h grn_util.h \
+	grn_nglist.h grn_threadlist.h queue.h nntp.h grn_perl.h tcp.h \
+	grn_misc.h
+grn_config.o: grn_config.c ../include/grn_consts.h ../config.h \
+	grn_config.h grn_find.h ../include/grn_types.h \
+	../include/grn_vars.h grn_util.h
+grn_find.o: grn_find.c ../include/grn_consts.h ../config.h \
+	../include/grn_vars.h ../include/grn_types.h grn_find.h \
+	grn_util.h grn_config.h grn_threadlist.h grn_misc.h grn_menu.h \
+	nntp.h
+grn_menu.o: grn_menu.c ../include/grn_consts.h ../config.h grn_menu.h \
+	grn_commands.h ../include/grn_vars.h ../include/grn_types.h \
+	grn_config.h grn_find.h grn_util.h grn_prefs.h grn_nglist.h \
+	grn_threadlist.h grn_msgwin.h grn_msgpost.h grn_mhdrwin.h \
+	grn_msgsend.h grn_mime.h ../libmutt/mutt.h \
+	../libmutt/muttconfig.h ../libmutt/rfc822.h ../libmutt/hash.h \
+	../libmutt/mutt_regex.h ../libmutt/protos.h \
+	../libmutt/globals.h grn_perl.h grn_attach.h \
+	../pixmaps/ball-green.xpm ../pixmaps/ball-ltred.xpm
+grn_mhdrwin.o: grn_mhdrwin.c ../include/grn_consts.h ../config.h \
+	../include/grn_vars.h ../include/grn_types.h grn_util.h \
+	grn_misc.h grn_config.h grn_find.h grn_msgwin.h
+grn_mime.o: grn_mime.c ../include/grn_consts.h ../config.h \
+	../libmutt/mutt.h ../libmutt/muttconfig.h ../libmutt/rfc822.h \
+	../libmutt/hash.h ../libmutt/mutt_regex.h ../libmutt/protos.h \
+	../libmutt/globals.h ../libmutt/mime.h ../libmutt/rfc2047.h \
+	../include/grn_vars.h ../include/grn_types.h grn_util.h \
+	grn_misc.h grn_msgpost.h grn_config.h grn_find.h
+grn_misc.o: grn_misc.c ../include/grn_consts.h ../config.h \
+	../include/grn_vars.h ../include/grn_types.h grn_misc.h \
+	grn_util.h grn_news.h ../libmutt/mutt.h ../libmutt/muttconfig.h \
+	../libmutt/rfc822.h ../libmutt/hash.h ../libmutt/mutt_regex.h \
+	../libmutt/protos.h ../libmutt/globals.h
+grn_msgpost.o: grn_msgpost.c ../include/grn_consts.h ../config.h \
+	grn_msgpost.h ../include/grn_types.h grn_util.h grn_config.h \
+	grn_find.h grn_msgwin.h grn_misc.h grn_menu.h \
+	../include/grn_vars.h queue.h nntp.h grn_perl.h grn_nglist.h \
+	grn_mhdrwin.h
+grn_msgsend.o: grn_msgsend.c ../libmutt/mutt.h ../libmutt/muttconfig.h \
+	../libmutt/rfc822.h ../libmutt/hash.h ../libmutt/mutt_regex.h \
+	../libmutt/protos.h ../libmutt/globals.h \
+	../include/grn_consts.h ../config.h grn_msgpost.h \
+	../include/grn_types.h grn_msgsend.h grn_util.h grn_config.h \
+	grn_find.h ../include/grn_vars.h queue.h nntp.h grn_perl.h \
+	grn_misc.h grn_menu.h grn_msgwin.h grn_mime.h
+grn_msgview.o: grn_msgview.c ../include/grn_consts.h ../config.h \
+	grn_msgview.h xml-io.h ../include/grn_vars.h \
+	../include/grn_types.h grn_config.h grn_find.h grn_util.h
+grn_msgwin.o: grn_msgwin.c ../include/grn_consts.h ../config.h \
+	../include/grn_vars.h ../include/grn_types.h grn_msgwin.h \
+	grn_util.h grn_misc.h grn_commands.h grn_menu.h grn_config.h \
+	grn_find.h grn_msgview.h xml-io.h grn_threadlist.h grn_perl.h \
+	grn_mhdrwin.h queue.h nntp.h grn_mime.h ../libmutt/mutt.h \
+	../libmutt/muttconfig.h ../libmutt/rfc822.h ../libmutt/hash.h \
+	../libmutt/mutt_regex.h ../libmutt/protos.h \
+	../libmutt/globals.h
+grn_news.o: grn_news.c ../include/grn_consts.h ../config.h nntp.h \
+	../include/grn_types.h grn_news.h ../include/grn_vars.h \
+	grn_util.h grn_config.h grn_find.h
+grn_nglist.o: grn_nglist.c ../include/grn_consts.h ../config.h \
+	grn_nglist.h grn_menu.h ../include/grn_vars.h \
+	../include/grn_types.h grn_util.h grn_threadlist.h grn_news.h \
+	grn_config.h grn_find.h queue.h nntp.h grn_misc.h \
+	grn_commands.h
+grn_prefs.o: grn_prefs.c ../include/grn_consts.h ../config.h \
+	../include/grn_vars.h ../include/grn_types.h grn_config.h \
+	grn_find.h grn_prefs.h grn_util.h grn_nglist.h
+grn_threadlist.o: grn_threadlist.c ../include/grn_consts.h ../config.h \
+	grn_threadlist.h ../include/grn_types.h grn_menu.h \
+	../include/grn_vars.h grn_util.h grn_misc.h grn_config.h \
+	grn_find.h grn_commands.h nntp.h grn_news.h grn_nglist.h \
+	grn_msgwin.h grn_perl.h queue.h grn_tl_compare_funcs.c
+grn_util.o: grn_util.c ../include/grn_consts.h ../config.h \
+	../include/grn_types.h ../include/grn_vars.h grn_util.h \
+	grn_config.h grn_find.h
+nntp.o: nntp.c ../include/grn_consts.h ../config.h tcp.h \
+	../include/grn_types.h nntp.h ../include/grn_vars.h \
+	grn_config.h grn_find.h grn_misc.h queue.h grn_util.h \
+	grn_perl.h grn_msgpost.h grn_mime.h ../libmutt/mutt.h \
+	../libmutt/muttconfig.h ../libmutt/rfc822.h ../libmutt/hash.h \
+	../libmutt/mutt_regex.h ../libmutt/protos.h \
+	../libmutt/globals.h
+perl.o: perl.c ../include/grn_consts.h ../config.h \
+	../include/grn_types.h grn_util.h grn_perl.h grn_msgview.h \
+	xml-io.h grn_config.h grn_find.h grn_misc.h
+perlxsi.o: perlxsi.c
+queue.o: queue.c ../include/grn_consts.h ../config.h \
+	../include/grn_vars.h ../include/grn_types.h grn_misc.h \
+	grn_util.h grn_config.h grn_find.h grn_news.h tcp.h smtp.h \
+	queue.h nntp.h grn_nglist.h grn_threadlist.h grn_msgwin.h
+smtp.o: smtp.c ../config.h smtp.h ../include/grn_types.h \
+	../include/grn_consts.h tcp.h grn_util.h grn_config.h \
+	grn_find.h grn_msgsend.h
+tcp.o: tcp.c ../include/grn_consts.h ../config.h tcp.h \
+	../include/grn_types.h grn_util.h
+xml-io.o: xml-io.c ../include/grn_consts.h ../config.h xml-io.h
+
+info-am:
+info: info-am
+dvi-am:
+dvi: dvi-am
+check-am: all-am
+check: check-am
+installcheck-am:
+installcheck: installcheck-am
+install-exec-am: install-binPROGRAMS
+install-exec: install-exec-am
+
+install-data-am:
+install-data: install-data-am
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+install: install-am
+uninstall-am: uninstall-binPROGRAMS
+uninstall: uninstall-am
+all-am: Makefile $(PROGRAMS) $(HEADERS)
+all-redirect: all-am
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+installdirs:
+	$(mkinstalldirs)  $(DESTDIR)$(bindir)
+
+
+mostlyclean-generic:
+
+clean-generic:
+
+distclean-generic:
+	-rm -f Makefile $(CONFIG_CLEAN_FILES)
+	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+
+maintainer-clean-generic:
+mostlyclean-am:  mostlyclean-binPROGRAMS mostlyclean-compile \
+		mostlyclean-tags mostlyclean-generic
+
+mostlyclean: mostlyclean-am
+
+clean-am:  clean-binPROGRAMS clean-compile clean-tags clean-generic \
+		mostlyclean-am
+
+clean: clean-am
+
+distclean-am:  distclean-binPROGRAMS distclean-compile distclean-tags \
+		distclean-generic clean-am
+
+distclean: distclean-am
+
+maintainer-clean-am:  maintainer-clean-binPROGRAMS \
+		maintainer-clean-compile maintainer-clean-tags \
+		maintainer-clean-generic distclean-am
+	@echo "This command is intended for maintainers to use;"
+	@echo "it deletes files that may require special tools to rebuild."
+
+maintainer-clean: maintainer-clean-am
+
+.PHONY: mostlyclean-binPROGRAMS distclean-binPROGRAMS clean-binPROGRAMS \
+maintainer-clean-binPROGRAMS uninstall-binPROGRAMS install-binPROGRAMS \
+mostlyclean-compile distclean-compile clean-compile \
+maintainer-clean-compile tags mostlyclean-tags distclean-tags \
+clean-tags maintainer-clean-tags distdir info-am info dvi-am dvi check \
+check-am installcheck-am installcheck install-exec-am install-exec \
+install-data-am install-data install-am install uninstall-am uninstall \
+all-redirect all-am all installdirs mostlyclean-generic \
+distclean-generic clean-generic maintainer-clean-generic clean \
+mostlyclean distclean maintainer-clean
+
+
+#grn_DEPENDENCIES = $(top_builddir)/libmutt/libmutt.a
+
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

@@ -1,0 +1,17 @@
+#undef ENABLE_NLS
+#undef HAVE_CATGETS
+#undef HAVE_GETTEXT
+#undef HAVE_LC_MESSAGES
+#undef HAVE_STPCPY
+#undef USE_XML
+#undef USE_PERL
+#undef USE_PLUGIN
+#undef USE_IMLIB
+#undef VERSION
+#undef PACKAGE
+#undef USE_PERL
+#undef USE_PTHREAD
+#undef USE_PLUGIN
+#undef USE_GNOME
+#undef GRN_DEBUG
+#undef USE_XTEXT

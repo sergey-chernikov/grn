@@ -1,0 +1,28 @@
+$Id: README,v 1.7 2000/04/28 12:32:27 sc Exp $
+
+Grn
+Gnome ReadNews - NNTP news client for Gnome
+
+
+	1. Description
+
+GRN allows you to read news with pleasure. Soon it will combine look'n'feel of
+FleetStreet (an FTN echoes reader for OS/2 PM) and tin. Anyone remembers any of
+those? Scripts'n'plugins capabilities will let you do everything with newsgroups
+list, threads and message itself. It would differ from Gnus in only one thing:
+using Perl as a basic scripting language.
+
+
+	2. Requirements
+
+First of all, GRN requires GNOME and all its mandatory libraries (gnome-libs
+package). libxml-1.8.x (or higher) is also required.
+For hooking and executing external scripts you need at least Perl version
+5.004 or greater. For other language bindings, corresponding language package
+must be installed and accessible to configure script.
+POSIX threads are also mandatory.
+
+
+	3. Installation options
+
+Read the INSTALL file.

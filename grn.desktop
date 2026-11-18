@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Gnome ReadNews
+Comment=Scripts extensible NNTP client
+Comment[ru]=Расширяемый скриптами NNTP-клиент
+Exec=grn
+Icon=grn.png
+Terminal=0
+Type=Application

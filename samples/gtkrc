@@ -1,0 +1,33 @@
+# Sample gtkrc file for Grn. The full pathname ought to be '~/.grn/gtkrc'.
+
+
+style "progressbar"
+{
+  fontset = "-*-fixed-bold-r-normal--*"
+  fg[NORMAL] = {1.0, 1.0, 1.0}
+  bg[INSENSITIVE] = {0.0, 0.7, 0.0}
+  bg[NORMAL] = {0.0, 0.4, 0.0}
+}
+
+style "tooltips"
+{
+  bg[NORMAL] = {1.0, 1.0, 0.8}
+  fontset = "-*-times-medium-r-normal--14-*"
+}
+
+style "menu"
+{
+  fontset = "-*-helvetica-bold-r-normal--14-*"
+}
+
+style "appbar_label"
+{
+  fontset = "-*-helvetica-bold-r-normal--12-*"
+  fg[NORMAL] = "#235F5F"
+}
+
+
+class "GtkProgressBar"		style "progressbar"
+widget "gtk-tooltips*"		style "tooltips"
+widget "*main-menu*"		style "menu"
+widget "*main-appbar*.GtkLabel"	style "appbar_label"

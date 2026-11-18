@@ -1,0 +1,65 @@
+%define  ver     @VERSION@
+%define  rel     1
+%define  prefix  /usr/local
+
+Summary: Gnome ReadNews
+Name: 		grn
+Version: 	%ver
+Release: 	%rel
+Copyright: 	GPL
+Group: 		Internet/News
+Source: ftp://ivvs.ul.ru/pub/unix/gnome/grn/grn-%{ver}.tar.gz
+Url:		http://ivvs.ul.ru/~sc/grn
+BuildRoot:	/var/tmp/grn-%{PACKAGE_VERSION}-root
+Obsoletes: 	grn
+Docdir: 	%{prefix}/doc
+
+Requires: gnome-libs >= 1.0.0
+
+%description
+GNOME (GNU Network Object Model Environment) is a user-friendly set of
+applications and desktop tools to be used in conjunction with a window
+manager for the X Window System.  GNOME is similar in purpose and scope
+to CDE and KDE, but GNOME is based completely on free software.
+
+GRN allows you to read news with pleasure. Soon it will look like FleetStreet
+(an FTN echoes reader for OS/2 PM) and tin. Scripts'n'plugins capabilities will
+let you do everything with newsgroups list, threads and message itself. It
+would differ from Gnus in only two things: using of Perl as a basic scripting
+and hook language (other language bindings will be available soon, e.g. Python,
+may be Tcl); and it wouldn't require The Beast (I mean [X]Emacs). ;)
+
+
+%prep
+%setup -q
+
+%build
+%ifarch alpha
+  MYARCH_FLAGS="--host=alpha-redhat-linux"
+%endif
+./configure --prefix=%prefix $MYARCH_FLAGS
+
+if [ "$SMP" != "" ]; then
+  (make "MAKE=make -k -j $SMP"; exit 0)
+  make
+else
+  make
+fi
+
+%install
+
+make prefix=$RPM_BUILD_ROOT%{prefix} install
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%changelog
+* Wed Nov 10  1999 Sergey Chernikov <sc@ivvs.ul.ru>
+- Created this file.
+
+%files
+%defattr(-, root, root)
+
+%doc AUTHORS ChangeLog NEWS README COPYING TODO
+
+%{prefix}/bin/*

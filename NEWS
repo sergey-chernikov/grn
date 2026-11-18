@@ -1,0 +1,82 @@
+$Id: NEWS,v 1.17 2000/07/19 06:26:16 sc Exp $
+
+0.0.26
+	* Added some compatibility #includes and #ifdefs to compile on
+	  Solaris.
+	* "Execute" button in "MIME structure" dialog now works.
+	* "Attachments" dialog for message composing.
+	* More documentation in HTML format.
+	* Bugfixes.
+	* Waiting for font manipulation features in GtkHTML.
+	* Really last release before my taking off. ;)
+
+0.0.24
+	* Added "MIME structure" dialog, which can be used to save, open and
+	  view any MIME part (Message/View/MIME). "Execute" button doesn't
+	  work, yet.
+	* Perl commands are now implemented.
+	* Added new GRN:: functions for Perl hooks.
+	* Perl command examples added to the "samples" directory.
+	* Address book (written in Perl) is now available. It uses GnomeCard's
+	  data file.
+	* Bugfixes.
+	* GRN project is suspended for undetermined time. :(
+
+0.0.22
+	* MIME structure is now parsed and showed. Thorough testing required!
+	* Decoding of QP, Base64 and UUE attachments "in place".
+	* New Perl hooks: PreShowHeader, PreShowFooter and PreShowPart (for
+	  MIME multipart handling).
+	* Bugfixes.
+	* Waiting for GtkHTML to be finished.
+
+0.0.20
+	* Searching in a threadlist fully implemented.
+	* "--config" ('-c') command-line option. Read `grn --help` carefully.
+	* "Paths" tab added to "Preferences" dialog. You can now run several
+	  instances of GRN for multiple NNTP servers.
+	* Some changes in "PreShow" hook.
+	* Bugfixes.
+
+0.0.18
+	* Sending via SMTP implemented.
+	* Added rfc2047 decoding for headers.
+	* "Edit message headers" dialog implemented.
+	* Interface touchups.
+	* Bugfixes.
+
+0.0.16
+	* More convenient error reporting.
+	* Autoconnection behavior changed.
+	* Some recalc optimizations.
+	* Added menu for "Post message" window.
+	* Work on message sending via SMTP initiated.
+	* Some Perl hook samples updated.
+	* Russian translation file updated.
+	* Bugfixes.
+
+0.0.14
+	* New article post, Forward to group, and Followup-to implemented.
+	* Added some GNKSA validity checks before posting.
+	* Background threadlist status recalculation.
+	* Changed template generation a bit ($MSG{text} -> $MSG{body} in hooks).
+	* Scripts/Perl/List implemented.
+	* Added DynaLoader support for Perl hooks. Now you can use such things
+	  as GtkPerl.
+	* New Perl hook examples in samples/hooks/Perl.
+	* Inline variables appeared (read doc/inline_vars.txt for more info).
+	* Tab completion in "Find newsgroup".
+	* Some memory leaks eliminated.
+	* Bugfixes.
+
+0.0.12
+	* Smooth scrolling.
+	* Work on posting initiated.
+	* Some memory leaks fixed.
+	* Toolbar added.
+	* Font and Color palettes added (useful for hooks).
+	* "Scripts/Perl/Load..." and "Scripts/Perl/Restart All" menu items
+	  implemented.
+	* "Preferences" dialog reworked a bit.
+	* Internal format changed from XML to HTML.
+	* Added PreShow hook and GRN::html_escape().

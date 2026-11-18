@@ -1,0 +1,297 @@
+dnl Process this file with autoconf to produce a configure script.
+dnl $Id: configure.in,v 1.27 2000/07/19 06:26:16 sc Exp $
+
+
+AC_INIT(src)
+AM_CONFIG_HEADER(config.h)
+AM_INIT_AUTOMAKE(grn, 0.0.28)
+AC_PROG_CC
+AC_ISC_POSIX
+AC_HEADER_STDC
+AC_ARG_PROGRAM
+AC_CONFIG_SUBDIRS(libmutt)
+
+ALL_LINGUAS="ru"
+AM_GNU_GETTEXT
+
+AC_PATH_PROG(sedpath, sed)
+
+if test "_$sedpath" = _; then
+  AC_MSG_ERROR("Cannot find sed: I need it\!")
+fi
+
+AC_PATH_PROG(unamepath, uname)
+if test "_$unamepath" = _; then
+  system="unknown"
+else
+  AC_MSG_CHECKING(system type)
+  system=`$unamepath -s`
+  AC_MSG_RESULT($system)
+fi
+
+AC_PATH_PROG(gmakepath, gmake)
+
+dnl *********************************************************************
+dnl ** DEBUG ************************************************************
+dnl *********************************************************************
+
+AC_ARG_ENABLE(debug,
+[  --enable-debug          enable use of Memory Debug],
+        debug=$enableval, debug=no)
+
+if test "$debug" = yes; then
+  AC_DEFINE(GRN_DEBUG)
+fi
+
+
+AC_ARG_ENABLE(xtext,
+[  --enable-xtext          use X-Chat's xtext instead of GtkText],
+        xtext=$enableval, xtext=no)
+
+if test "$xtext" = yes; then
+  AC_DEFINE(USE_XTEXT)
+fi
+
+
+dnl *********************************************************************
+dnl ** GTK **************************************************************
+dnl *********************************************************************
+
+AM_PATH_GTK(1.2.0, , havenogtk=yes)
+AC_PATH_PROG(glibpath, glib-config)
+AC_MSG_CHECKING(for Glib compile flags)
+GLIB_CFLAGS=`$glibpath gmodule gthread --cflags 2>/dev/null`
+CFLAGS="$CFLAGS $GLIB_CFLAGS"
+GLIB_LIBS=`$glibpath gmodule gthread --libs 2>/dev/null`
+LIBS="$LIBS $GLIB_LIBS"
+
+if test "$havenogtk" = yes; then
+  gtkfe=no
+  echo
+  echo Cannot find GTK\!
+  echo
+fi
+
+if test "$gtkfe" = yes; then
+  gtkfe=yes
+else
+  gnome=no
+  imlib=no
+  panel=no
+  LIBS="$LIBS $GLIB_LIBS"
+  CFLAGS="$CFLAGS $GLIB_CFLAGS"
+fi
+
+
+dnl *********************************************************************
+dnl ** GNOME ************************************************************
+dnl *********************************************************************
+
+AC_ARG_ENABLE(gnome,
+[  --disable-gnome         disable use of gnome],
+        gnome=$enableval, gnome=yes)
+
+if test "$gnome" = yes; then
+  AC_PATH_PROG(gnomepath, gnome-config)
+  AC_MSG_CHECKING(for Gnome compile flags)
+  GNOME_CFLAGS=`$gnomepath gnomeui xml --cflags 2>/dev/null`
+  if test "_$GNOME_CFLAGS" = _ ; then
+    gnome=no
+    AC_MSG_RESULT([Gnome not found, building without it.])
+    LIBS="$LIBS $GTK_LIBS"
+    CFLAGS="$CFLAGS $GTK_CFLAGS"
+  else
+    GNOME_VER=`$gnomepath --version |$sedpath 's/gnome-libs //' 2>/dev/null`
+    GNOME_MAJOR=`echo $GNOME_VER |$sedpath 's/\([[0-9]*]*\).\([[0-9]*]*\).\([[0-9]*]*\)/\1/' 2>/dev/null`
+    if test "_$GNOME_MAJOR" = "_0"; then
+      gnome=no
+      AC_MSG_RESULT([old Gnome found, building without it.])
+      LIBS="$LIBS $GTK_LIBS"
+      CFLAGS="$CFLAGS $GTK_CFLAGS"
+    else
+      AC_MSG_RESULT(ok)
+      LIBS="$LIBS `$gnomepath gnomeui xml --libs 2>/dev/null`"
+      CFLAGS="$CFLAGS $GNOME_CFLAGS"
+      AC_DEFINE(USE_GNOME)
+      if test "$imlib" = yes; then
+        AC_DEFINE(USE_IMLIB)
+      fi
+    fi
+  fi
+else
+  LIBS="$LIBS $GTK_LIBS"
+  CFLAGS="$CFLAGS $GTK_CFLAGS"
+fi
+
+
+dnl *********************************************************************
+dnl ** CONDITIONALS *****************************************************
+dnl *********************************************************************
+
+AC_SUBST(TEXT_LIBS)
+AC_SUBST(TEXT_CFLAGS)
+AM_CONDITIONAL(USE_GNOME, test "x$gnome" = "xyes")
+AM_CONDITIONAL(DO_GTK, test "x$gtkfe" = "xyes")
+
+
+dnl *********************************************************************
+dnl ** IMLIB ************************************************************
+dnl *********************************************************************
+
+AC_ARG_ENABLE(imlib,
+[  --disable-imlib         disable use of imlib],
+        imlib=$enableval, imlib=yes)
+
+if test "$gnome" = no; then
+  if test "$imlib" = yes; then
+    AC_PATH_PROG(imlibpath, imlib-config)
+    AC_MSG_CHECKING(for gdk_imlib)
+    IMLIB_CFLAGS=`$imlibpath --cflags-gdk 2>/dev/null`
+    IMLIB_LDFLAGS=`$imlibpath --libs-gdk 2>/dev/null`
+    if test "_$IMLIB_CFLAGS" = _ ; then
+      AC_MSG_RESULT([not found, building without imlib.])
+      imlib=no
+    else
+      AC_MSG_RESULT(ok)
+      LIBS="$LIBS $IMLIB_LDFLAGS"
+      CFLAGS="$CFLAGS $IMLIB_CFLAGS"
+      AC_DEFINE(USE_IMLIB)
+    fi
+  fi
+fi
+
+
+dnl *********************************************************************
+dnl ** PERL *************************************************************
+dnl *********************************************************************
+
+AC_ARG_ENABLE(perl,
+[  --disable-perl          disable use of perl scripting],
+        perl=$enableval, perl=yes)
+
+if test "$perl" = yes; then
+  AC_PATH_PROG(perlpath, perl)
+  AC_MSG_CHECKING(for Perl compile flags)
+  PERL_CFLAGS=`$perlpath -MExtUtils::Embed -e ccopts 2>/dev/null`
+  if test "_$PERL_CFLAGS" = _ ; then
+    AC_MSG_RESULT([not found, building without perl.])
+    perl=no
+  else
+    PERL_LDFLAGS=`$perlpath -MExtUtils::Embed -e ldopts |$sedpath 's/-lgdbm //'`
+    PERL_LDFLAGS=`echo $PERL_LDFLAGS |$sedpath 's/-lposix //'`
+    PERL_LDFLAGS=`echo $PERL_LDFLAGS |$sedpath 's/-ldb //'`
+    PERL_LDFLAGS=`echo $PERL_LDFLAGS |$sedpath 's/-lndbm //'`
+    if test "$system" = "Linux"; then
+      PERL_LDFLAGS=`echo $PERL_LDFLAGS |$sedpath 's/-lnsl //'`
+    fi
+    PERL_LDFLAGS=`echo $PERL_LDFLAGS |$sedpath 's/-lc //'`
+    AC_MSG_RESULT(ok)
+    CFLAGS="$CFLAGS $PERL_CFLAGS"
+    LIBS="$LIBS $PERL_LDFLAGS"
+    TEXT_CFLAGS="$TEXT_CFLAGS $PERL_CFLAGS"
+    TEXT_LIBS="$TEXT_LIBS $PERL_LDFLAGS"
+    AC_DEFINE(USE_PERL)
+  fi
+fi
+
+
+dnl *********************************************************************
+dnl ** PTHREADS *********************************************************
+dnl *********************************************************************
+
+#pthread=no
+#AC_CHECK_HEADERS(pthread.h, have_pthread_h=yes)
+#if test "$have_pthread_h" = yes; then
+#  AC_CHECK_LIB(pthread, pthread_create, pthread=yes)
+#  if test "$pthread" = yes; then
+#    AC_DEFINE(USE_PTHREAD)
+#    LIBS="$LIBS -lpthread"
+#    TEXT_LIBS="$TEXT_LIBS -lpthread"
+#  fi
+#fi
+
+
+dnl *********************************************************************
+dnl ** PLUGIN ***********************************************************
+dnl *********************************************************************
+
+AC_ARG_ENABLE(plugin,
+[  --disable-plugin        disable plugin support],
+        plugin=$enableval, plugin=yes)
+
+if test "$plugin" = yes; then
+  AC_DEFINE(USE_PLUGIN)
+fi
+
+
+if test "$imlib" = "yes"; then
+  AC_DEFINE(USE_IMLIB)
+fi
+
+
+dnl *********************************************************************
+dnl ** GCC FLAGS ********************************************************
+dnl *********************************************************************
+
+dnl Only use -Wall if we have gcc
+if test "x$GCC" = "xyes"; then
+  if test -z "`echo "$CFLAGS" | grep "\-Wall" 2> /dev/null`" ; then
+    CFLAGS="$CFLAGS -Wall"
+    TEXT_CFLAGS="$TEXT_CFLAGS -Wall"
+  fi
+fi
+
+
+dnl *********************************************************************
+dnl ** C FUNCTIONS ******************************************************
+dnl *********************************************************************
+
+dnl if we have this, g_snprintf isn't needed
+AC_CHECK_FUNCS(snprintf)
+
+dnl Solaris doesn't have this for some reason
+AC_CHECK_FUNCS(inet_aton)
+
+AC_OUTPUT([
+grn.spec
+Makefile
+pixmaps/Makefile
+src/Makefile
+intl/Makefile
+po/Makefile.in
+doc/Makefile
+doc/help/Makefile
+doc/help/C/Makefile
+doc/help/ru/Makefile
+])
+
+
+echo
+echo \-\*\- Gnome ReadNews $VERSION \-\*\-
+echo
+
+if test "$imlib" = "yes"; then
+  echo Building with ImLib ............. : yes \(`imlib-config --version`\)
+else
+  echo Building with ImLib ............. : no
+fi
+
+echo Building with Perl .............. : $perl
+
+#if test "$python" = "yes"; then
+#  echo Building with Python ............ : yes \($PY_VERSION\)
+#else
+#  echo Building with Python ............ : no
+#fi
+
+echo Building with Plugin Support .... : $plugin
+echo Building with Language Support .. : $USE_NLS
+#echo Building with Pthreads .......... : $pthread
+echo
+
+if test _"$gmakepath" = _; then
+  echo configure complete, now type \'make\'
+else
+  echo configure complete, now type \'gmake\'
+fi
+echo
